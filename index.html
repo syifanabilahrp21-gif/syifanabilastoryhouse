@@ -12,6 +12,55 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* Pink Ribbon */
+.pink-ribbon {
+  position: absolute;
+  width: 280px;
+  height: 60px;
+  border-radius: 50px;
+  background: linear-gradient(
+    90deg,
+    #ffb6c1,
+    #ffd1d8,
+    #ffb6c1
+  );
+  opacity: 0.7;
+  filter: blur(0.3px);
+  animation: floatRibbon 8s ease-in-out infinite;
+}
+
+/* Ribbon positions */
+.ribbon-1 {
+  top: 12%;
+  left: -120px;
+  transform: rotate(-8deg);
+}
+
+.ribbon-2 {
+  bottom: 18%;
+  right: -140px;
+  transform: rotate(6deg);
+  animation-delay: 2s;
+}
+
+.ribbon-3 {
+  top: 55%;
+  left: -160px;
+  transform: rotate(-3deg);
+  animation-delay: 4s;
+}
+
+/* Ribbon animation */
+@keyframes floatRibbon {
+  0% {
+    transform: translateY(0) rotate(var(--r, 0deg));
+  }
+  50% {
+    transform: translateY(-12px) rotate(var(--r, 0deg));
+  }
+  100% {
+    transform: translateY(0) rotate(var(--r, 0deg));
+  }
 }
 
 body {
@@ -22,6 +71,10 @@ body {
   align-items: center;
   font-family: 'Poppins', sans-serif;
   overflow: hidden;
+  <!-- Pink Ribbons -->
+<div class="pink-ribbon ribbon-1"></div>
+<div class="pink-ribbon ribbon-2"></div>
+<div class="pink-ribbon ribbon-3"></div>
 }
 
 /* Sparkles */
