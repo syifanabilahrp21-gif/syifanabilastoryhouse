@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Coming Soon-Syifa Nabila Story House</title>
+<title>Coming Soon | Syifa Nabila Story House</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&family=Lora&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -15,93 +15,102 @@
 }
 
 body {
-  background: linear-gradient(180deg, #f7f2ee, #fbf6f2);
+  height: 100vh;
+  background: linear-gradient(135deg, #f7b2b7, #f3c6c9, #f6d6d8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: 'Poppins', sans-serif;
-  color: #3a3a3a;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
-section {
-  padding: 90px 80px;
-}
-
-.chapter {
-  font-size: 14px;
-  letter-spacing: 2px;
-  color: #888;
-  margin-bottom: 25px;
-}
-
-.title {
-  font-family: 'Playfair Display', serif;
-  font-size: 72px;
-}
-
-.title .about {
-  color: #e8a1b8;
-  font-style: italic;
-}
-
-.title .me {
-  color: #c76b8a;
-  margin-left: 10px;
-}
-
-.subtitle {
-  font-family: 'Playfair Display', serif;
-  font-size: 40px;
-  margin: 40px 0 20px;
-}
-
-.desc {
-  max-width: 700px;
-  font-family: 'Lora', serif;
-  font-size: 17px;
-  line-height: 1.9;
-  color: #555;
-}
-
-/* Ribbon styles */
-.ribbon {
+/* Sparkles */
+.sparkle {
   position: absolute;
-  opacity: 0.7;
+  width: 6px;
+  height: 6px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 50%;
+  animation: sparkle 4s infinite ease-in-out;
 }
 
-.ribbon svg {
-  width: 320px;
+@keyframes sparkle {
+  0% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0; transform: scale(0.5); }
 }
 
-.ribbon.top {
-  top: 40px;
-  right: -60px;
+/* Card */
+.card {
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(12px);
+  border-radius: 40px;
+  padding: 70px 90px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(190, 80, 90, 0.25);
+  max-width: 900px;
 }
 
-.ribbon.middle {
-  top: 280px;
-  left: -80px;
+/* Title */
+.card h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  color: #ffffff;
+  background: linear-gradient(90deg, #ffffff, #ffd6da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
 }
 
-.ribbon.bottom {
-  bottom: 40px;
-  right: -100px;
+/* Text */
+.card p {
+  color: #7a2f36;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 50px;
+}
+
+/* Countdown */
+.countdown {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.time-box {
+  background: rgba(255,255,255,0.8);
+  width: 120px;
+  height: 120px;
+  border-radius: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 15px 30px rgba(190, 80, 90, 0.2);
+}
+
+.time-box h2 {
+  font-size: 36px;
+  color: #b1444f;
+}
+
+.time-box span {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #c96b74;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  section {
-    padding: 60px 30px;
+  .card {
+    padding: 50px 40px;
   }
 
-  .title {
-    font-size: 50px;
+  .card h1 {
+    font-size: 44px;
   }
 
-  .subtitle {
-    font-size: 28px;
-  }
-
-  .ribbon svg {
-    width: 220px;
+  .countdown {
+    flex-wrap: wrap;
   }
 }
 </style>
@@ -109,45 +118,68 @@ section {
 
 <body>
 
-<!-- Ribbon atas -->
-<div class="ribbon top">
-  <svg viewBox="0 0 300 80">
-    <path d="M20 40 C70 0, 150 0, 200 40 S270 80, 300 40"
-      fill="none" stroke="#e8a1b8" stroke-width="4" stroke-linecap="round"/>
-  </svg>
-</div>
+<!-- Sparkles -->
+<script>
+for (let i = 0; i < 30; i++) {
+  const s = document.createElement('div');
+  s.className = 'sparkle';
+  s.style.left = Math.random() * 100 + 'vw';
+  s.style.top = Math.random() * 100 + 'vh';
+  s.style.animationDelay = Math.random() * 4 + 's';
+  document.body.appendChild(s);
+}
+</script>
 
-<!-- Ribbon tengah -->
-<div class="ribbon middle">
-  <svg viewBox="0 0 300 80">
-    <path d="M20 40 C90 80, 160 80, 220 40 S280 0, 300 40"
-      fill="none" stroke="#f0b6c9" stroke-width="4" stroke-linecap="round"/>
-  </svg>
-</div>
+<div class="card">
+  <h1>Coming Soon</h1>
 
-<!-- Ribbon bawah -->
-<div class="ribbon bottom">
-  <svg viewBox="0 0 300 80">
-    <path d="M20 40 C70 10, 140 10, 200 40 S270 70, 300 40"
-      fill="none" stroke="#d98aa6" stroke-width="4" stroke-linecap="round"/>
-  </svg>
-</div>
-
-<section>
-  <p class="chapter">/01</p>
-
-  <h1 class="title">
-    <span class="about">About</span>
-    <span class="me">Me</span>
-  </h1>
-
-  <h2 class="subtitle">Perpus Syifa Nabila</h2>
-
-  <p class="desc">
-    Syifa Nabila Story House adalah ruang baca pribadi yang diciptakan untuk menyimpan cerita, merayakan kesunyian, dan menemani
-    waktu-waktu tenang bersama buku pilihan.
+  <p>
+    Website resmi <b> Syifa Nabila Story House</b> sedang dipersiapkan dengan penuh cinta.
+    Sebuah ruang baca hangat di internet, untuk kata-kata yang benar-benar berarti ❤️
   </p>
-</section>
+
+  <div class="countdown">
+    <div class="time-box">
+      <h2 id="days">24</h2>
+      <span>DAYS</span>
+    </div>
+    <div class="time-box">
+      <h2 id="hours">01</h2>
+      <span>HOURS</span>
+    </div>
+    <div class="time-box">
+      <h2 id="minutes">14</h2>
+      <span>MINUTES</span>
+    </div>
+    <div class="time-box">
+      <h2 id="seconds">45</h2>
+      <span>SECONDS</span>
+    </div>
+  </div>
+</div>
+
+<!-- Countdown Script -->
+<script>
+const targetDate = new Date();
+targetDate.setDate(targetDate.getDate() + 24);
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((distance / (1000 * 60)) % 60);
+  const seconds = Math.floor((distance / 1000) % 60);
+
+  document.getElementById("days").innerText = days;
+  document.getElementById("hours").innerText = hours;
+  document.getElementById("minutes").innerText = minutes;
+  document.getElementById("seconds").innerText = seconds;
+}
+
+setInterval(updateCountdown, 1000);
+</script>
 
 </body>
 </html>
