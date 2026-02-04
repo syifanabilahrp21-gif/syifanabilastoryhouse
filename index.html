@@ -1,48 +1,128 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon - Syifa Nabila Story House</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            font-family: Playfair display, Poppins, Lora;
-            text-align: center;
-            color: pink pastel;
-        }
+  <meta charset="UTF-8">
+  <title>Syifa Nabila Story House</title>
 
-        .container {
-            animation: fadeIn 2s ease-in-out;
-        }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&family=Lora&display=swap" rel="stylesheet">
 
-        h1 {
-            font-size: 60px;
-            margin: 0;
-            letter-spacing: 3px;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        p {
-            font-size: 20px;
-            margin-top: 20px;
-        }
+    body {
+      background-color: #f7f2ee;
+      font-family: 'Poppins', sans-serif;
+      color: #3a3a3a;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    .container {
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 70px;
+      background: #fffaf6;
+      border-radius: 14px;
+    }
+
+    .chapter {
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: #888;
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: 70px;
+      margin-bottom: 10px;
+    }
+
+    .title span:first-child {
+      color: #e8a1b8;
+      font-style: italic;
+    }
+
+    .title span:last-child {
+      color: #c76b8a;
+      margin-left: 10px;
+    }
+
+    .subtitle {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .ribbon {
+      margin: 25px 0 45px;
+      opacity: 0.75;
+    }
+
+    .desc {
+      max-width: 650px;
+      font-family: 'Lora', serif;
+      font-size: 17px;
+      line-height: 1.9;
+      color: #555;
+    }
+
+    /* Estetik responsive */
+    @media (max-width: 768px) {
+      .container {
+        margin: 30px;
+        padding: 40px;
+      }
+
+      .title {
+        font-size: 48px;
+      }
+
+      .subtitle {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>COMING SOON</h1>
-        <p>Website resmi Perpustakaan SYifa Nabila sedang dalam tahap pengembangan.<br>
-        Nantikan hadirnya ruang literasi digital yang inspiratif, informatif, dan penuh ilmu pengetahuan.</p>
+
+  <section class="container">
+
+    <p class="chapter">/01</p>
+
+    <h1 class="title">
+      <span>About</span><span>Me</span>
+    </h1>
+
+    <!-- Ribbon SVG -->
+    <div class="ribbon">
+      <svg width="260" height="70" viewBox="0 0 260 70" xmlns="http://www.w3.org/2000/svg">
+        <path d="
+          M20 35 
+          C60 5, 120 5, 160 35 
+          S220 65, 240 35"
+          fill="none"
+          stroke="#e8a1b8"
+          stroke-width="4"
+          stroke-linecap="round"
+        />
+        <path d="M20 35 L10 28 L10 42 Z" fill="#e8a1b8"/>
+        <path d="M240 35 L250 28 L250 42 Z" fill="#e8a1b8"/>
+      </svg>
     </div>
+
+    <h2 class="subtitle">Perpus Syifa Nabila</h2>
+
+    <p class="desc">
+      Syifa Nabila Story House adalah perpustakaan pribadi untuk menyimpan cerita, merawat kebiasaan membaca,
+      dan menikmati waktu sunyi dengan buku-buku pilihan.
+    </p>
+
+  </section>
+
 </body>
 </html>
