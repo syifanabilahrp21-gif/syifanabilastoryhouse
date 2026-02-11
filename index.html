@@ -1,96 +1,158 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Syifa Nabila Story House</title>
+<title>Landing Page</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
 
-  <body> 
-  height: 100vh;
-  background: #5C1A1B
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f4f5f7;
+  color: #111;
+}
+
+/* NAVBAR */
+.navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  font-family: 'Poppins', sans-serif;
+  padding: 25px 60px;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  font-size: 14px;
+  color: #555;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-btn {
+  background: #1f1f2e;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* HERO */
+.hero {
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+  background: #e9ebf2;
+  border-radius: 30px;
   overflow: hidden;
-
-/* Sparkle */
-.sparkle {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  background: rgba(255,255,255,0.8);
-  border-radius: 50%;
-  animation: sparkle 4s infinite ease-in-out;
-
-
-@keyframes sparkle {
-  0% { opacity: 0; transform: scale(0.5); }
-  50% { opacity: 1; transform: scale(1.3); }
-  100% { opacity: 0; transform: scale(0.5); }
-
-
-/* Card */
-.card {
-  background: rgba(255, 248, 235, 0.65);
-  backdrop-filter: blur(10px);
-  border-radius: 40px;
-  padding: 70px 90px;
+  padding: 80px 60px 0 60px;
   text-align: center;
-  box-shadow: 0 30px 60px rgba(120, 80, 50, 0.25);
-  max-width: 900px;
+  position: relative;
+}
 
-
-/* Title */
-.card h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 64px;
-  background: linear-gradient(90deg, #6b4f3a, #a67c52);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.hero h1 {
+  font-size: 56px;
+  font-weight: 600;
   margin-bottom: 20px;
+}
 
-/* Responsive */
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  color: #555;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.hero-btn {
+  background: #111;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 60px;
+}
+
+/* HERO IMAGE */
+.hero-image {
+  width: 100%;
+  height: 400px;
+  background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .card { padding: 50px 30px; }
-  .card h1 { font-size: 44px; }
-  .countdown { flex-wrap: wrap; }
 
+  .navbar {
+    padding: 20px 30px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    padding: 60px 30px 0 30px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero-image {
+    height: 250px;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<!-- Sparkles -->
-<script>
-for (let i = 0; i < 25; i++) {
-  const s = document.createElement('div');
-  s.className = 'sparkle';
-  s.style.left = Math.random() * 100 + 'vw';
-  s.style.top = Math.random() * 100 + 'vh';
-  s.style.animationDelay = Math.random() * 4 + 's';
-  document.body.appendChild(s);
-}
-</script>
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">BloomFi</div>
 
-<!-- Ribbons -->
-<div class="ribbon ribbon1"></div>
-<div class="ribbon ribbon2"></div>
-<div class="ribbon ribbon3"></div>
+  <div class="nav-links">
+    <a href="#">About me</a>
+  </div>
 
-<div class="card">
-  <h1>Selamat Datang</h1>
+  <a href="#" class="nav-btn">Launch BETA</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Syifa Nabila Story House</h1>
 
   <p>
-    Website resmi <b>Syifa Nabila Story House</b>
+    A programmable, utility-driven stable token designed for
+    native value accrual and seamless integration into DeFi.
+  </p>
 
-</script>
+  <a href="#" class="hero-btn">Try it now</a>
+
+  <div class="hero-image"></div>
+</section>
 
 </body>
 </html>
