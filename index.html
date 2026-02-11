@@ -2,26 +2,23 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Coming Soon | Perpus Syifa Nabila</title>
+<title>Syifa Nabila Story House</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
 
-body {
+  <body> 
   height: 100vh;
-  background: linear-gradient(135deg, #f6f1e8, #e8d8c3, #d6bfa8);
+  background: #5C1A1B
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Poppins', sans-serif;
   overflow: hidden;
-}
 
 /* Sparkle */
 .sparkle {
@@ -31,13 +28,13 @@ body {
   background: rgba(255,255,255,0.8);
   border-radius: 50%;
   animation: sparkle 4s infinite ease-in-out;
-}
+
 
 @keyframes sparkle {
   0% { opacity: 0; transform: scale(0.5); }
   50% { opacity: 1; transform: scale(1.3); }
   100% { opacity: 0; transform: scale(0.5); }
-}
+
 
 /* Card */
 .card {
@@ -48,7 +45,7 @@ body {
   text-align: center;
   box-shadow: 0 30px 60px rgba(120, 80, 50, 0.25);
   max-width: 900px;
-}
+
 
 /* Title */
 .card h1 {
@@ -58,72 +55,13 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 20px;
-}
-
-/* Text */
-.card p {
-  color: #6b4f3a;
-  font-size: 18px;
-  line-height: 1.7;
-  margin-bottom: 50px;
-}
-
-/* Countdown */
-.countdown {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-}
-
-.time-box {
-  background: rgba(255,255,255,0.85);
-  width: 120px;
-  height: 120px;
-  border-radius: 26px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: 0 15px 30px rgba(120, 80, 50, 0.2);
-}
-
-.time-box h2 {
-  font-size: 36px;
-  color: #7b5a3d;
-}
-
-.time-box span {
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: #a67c52;
-}
-
-/* Cream-Brown Ribbons */
-.ribbon {
-  position: absolute;
-  width: 280px;
-  height: 60px;
-  border-radius: 50px;
-  background: linear-gradient(90deg, #e8d8c3, #c6a889, #e8d8c3);
-  opacity: 0.6;
-  animation: floatRibbon 8s ease-in-out infinite;
-}
-
-.ribbon1 { top: 10%; left: -120px; transform: rotate(-8deg); }
-.ribbon2 { bottom: 15%; right: -140px; transform: rotate(6deg); animation-delay: 2s; }
-.ribbon3 { top: 55%; left: -160px; transform: rotate(-3deg); animation-delay: 4s; }
-
-@keyframes floatRibbon {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0); }
-}
 
 /* Responsive */
 @media (max-width: 768px) {
   .card { padding: 50px 30px; }
   .card h1 { font-size: 44px; }
   .countdown { flex-wrap: wrap; }
-}
+
 </style>
 </head>
 
@@ -147,49 +85,11 @@ for (let i = 0; i < 25; i++) {
 <div class="ribbon ribbon3"></div>
 
 <div class="card">
-  <h1>Coming Soon</h1>
+  <h1>Selamat Datang</h1>
 
   <p>
-    Website resmi <b>Perpus Syifa Nabila</b> sedang dipersiapkan.
-    Sebuah ruang baca hangat bernuansa cream dan coklat,
-    untuk menemani cerita dan waktu tenang 🤎
-  </p>
+    Website resmi <b>Syifa Nabila Story House</b>
 
-  <div class="countdown">
-    <div class="time-box">
-      <h2 id="days">24</h2>
-      <span>DAYS</span>
-    </div>
-    <div class="time-box">
-      <h2 id="hours">01</h2>
-      <span>HOURS</span>
-    </div>
-    <div class="time-box">
-      <h2 id="minutes">14</h2>
-      <span>MINUTES</span>
-    </div>
-    <div class="time-box">
-      <h2 id="seconds">45</h2>
-      <span>SECONDS</span>
-    </div>
-  </div>
-</div>
-
-<script>
-const targetDate = new Date();
-targetDate.setDate(targetDate.getDate() + 24);
-
-function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = targetDate - now;
-
-  document.getElementById("days").innerText = Math.floor(distance / (1000*60*60*24));
-  document.getElementById("hours").innerText = Math.floor((distance/(1000*60*60))%24);
-  document.getElementById("minutes").innerText = Math.floor((distance/(1000*60))%60);
-  document.getElementById("seconds").innerText = Math.floor((distance/1000)%60);
-}
-
-setInterval(updateCountdown, 1000);
 </script>
 
 </body>
