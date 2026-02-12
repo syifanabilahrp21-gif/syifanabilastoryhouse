@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Landing Page</title>
+<title>Library of Syifa Nabila</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -15,11 +15,11 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #f4f5f7;
+  background: #f5f5f5;
   color: #111;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -33,36 +33,58 @@ body {
 }
 
 .nav-links {
-  display: flex;
-  gap: 40px;
-  font-size: 14px;
-  color: #555;
+  position: relative;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: inherit;
+  color: #555;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-.nav-btn {
-  background: #1f1f2e;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 20px;
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 180px;
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.08);
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 15px;
+  display: block;
   text-decoration: none;
   font-size: 14px;
 }
 
-/* HERO */
+.dropdown-content a:hover {
+  background: #f3f3f3;
+  border-radius: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ================= HERO ================= */
 .hero {
   max-width: 1200px;
   margin: 0 auto 60px auto;
-  background: #e9ebf2;
+  background: #f0f1f6;
   border-radius: 30px;
   overflow: hidden;
   padding: 80px 60px 0 60px;
   text-align: center;
-  position: relative;
 }
 
 .hero h1 {
@@ -73,86 +95,60 @@ body {
 
 .hero p {
   max-width: 600px;
-  margin: 0 auto 30px auto;
+  margin: 0 auto 60px auto;
   color: #555;
   font-size: 18px;
   line-height: 1.6;
 }
 
-.hero-btn {
-  background: #111;
-  color: white;
-  padding: 12px 28px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-size: 14px;
-  display: inline-block;
-  margin-bottom: 60px;
-}
-
 /* HERO IMAGE */
-.hero-image {
+.hero-image img {
   width: 100%;
-  height: 400px;
-  background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80');
-  background-size: cover;
-  background-position: center;
+  height: 420px;
+  object-fit: cover;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-
-  .navbar {
-    padding: 20px 30px;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .hero {
-    padding: 60px 30px 0 30px;
-  }
-
-  .hero h1 {
-    font-size: 36px;
-  }
-
-  .hero-image {
-    height: 250px;
-  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 <div class="navbar">
-  <div class="logo">BloomFi</div>
+  <div class="logo">Syifa Nabila Story House 📖✨</div>
 
   <div class="nav-links">
-    <a href="#">About me</a>
+    <div class="dropdown">
+      <a>About Me ▾</a>
+      <div class="dropdown-content">
+        <a href="https://instagram.com/usernamekamu" target="_blank">
+          Sosial Media
+        </a>
+        <a href="https://drive.google.com/file/d/123456789/view" target="_blank">
+          Curriculum Vitae
+        </a>
+      </div>
+    </div>
   </div>
-
-  <a href="#" class="nav-btn">Launch BETA</a>
 </div>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <section class="hero">
-  <h1>Syifa Nabila Story House</h1>
+
+  <h1>Library of Syifa Nabila</h1>
 
   <p>
-    A programmable, utility-driven stable token designed for
-    native value accrual and seamless integration into DeFi.
+    Sebuah perpustakaan yang akan membawa anda menuju pengetahuan
   </p>
 
-  <a href="#" class="hero-btn">Try it now</a>
+  <div class="hero-image">
+    <!-- Gambar buku estetik dominan merah -->
+    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1600&q=80" alt="Red Aesthetic Books">
+  </div>
 
-  <div class="hero-image"></div>
 </section>
 
 </body>
 </html>
+
