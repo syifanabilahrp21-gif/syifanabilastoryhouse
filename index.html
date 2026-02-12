@@ -2,130 +2,193 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Library of Syifa Nabila</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Crimson+Text:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: #f5f5f5;
-  color: #111;
+body{
+  background:#f4f2ef;
+  font-family:'Source Sans 3', sans-serif;
+  color:#2b2b2b;
 }
 
 /* ================= NAVBAR ================= */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px 60px;
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:25px 60px;
 }
 
-.logo {
-  font-weight: 600;
-  font-size: 18px;
+.logo{
+  font-family:'Libre Baskerville', serif;
+  font-weight:700;
+  font-size:20px;
 }
 
-.nav-links {
-  position: relative;
+.nav-links{
+  position:relative;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: #555;
-  font-size: 14px;
-  cursor: pointer;
+.about-btn{
+  background:#7b1e2b;
+  color:white;
+  padding:10px 22px;
+  border-radius:25px;
+  cursor:pointer;
+  font-size:14px;
+  text-decoration:none;
 }
 
 /* Dropdown */
-.dropdown {
-  position: relative;
-  display: inline-block;
+.dropdown{
+  position:relative;
+  display:inline-block;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 180px;
-  box-shadow: 0px 10px 25px rgba(0,0,0,0.08);
-  border-radius: 10px;
-  margin-top: 10px;
+.dropdown-content{
+  display:none;
+  position:absolute;
+  right:0;
+  background:white;
+  min-width:200px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  border-radius:12px;
+  margin-top:12px;
 }
 
-.dropdown-content a {
-  color: #333;
-  padding: 12px 15px;
-  display: block;
-  text-decoration: none;
-  font-size: 14px;
+.dropdown-content a{
+  display:block;
+  padding:12px 16px;
+  text-decoration:none;
+  color:#333;
+  font-size:14px;
 }
 
-.dropdown-content a:hover {
-  background: #f3f3f3;
-  border-radius: 10px;
+.dropdown-content a:hover{
+  background:#f3f3f3;
+  border-radius:12px;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
+.dropdown:hover .dropdown-content{
+  display:block;
 }
 
 /* ================= HERO ================= */
-.hero {
-  max-width: 1200px;
-  margin: 0 auto 60px auto;
-  background: #f0f1f6;
-  border-radius: 30px;
-  overflow: hidden;
-  padding: 80px 60px 0 60px;
-  text-align: center;
+.hero{
+  max-width:1200px;
+  margin:0 auto 60px auto;
+  background:#ffffff;
+  border-radius:30px;
+  overflow:hidden;
+  padding:80px 60px;
 }
 
-.hero h1 {
-  font-size: 56px;
-  font-weight: 600;
-  margin-bottom: 20px;
+.hero-content{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:40px;
+  flex-wrap:wrap;
 }
 
-.hero p {
-  max-width: 600px;
-  margin: 0 auto 60px auto;
-  color: #555;
-  font-size: 18px;
-  line-height: 1.6;
+/* TEXT AREA */
+.hero-text{
+  flex:1;
 }
 
-/* HERO IMAGE */
-.hero-image img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+.hero-text h1{
+  font-family:'Libre Baskerville', serif;
+  font-size:50px;
+  margin-bottom:25px;
+}
+
+.hero-text h2{
+  font-family:'Crimson Text', serif;
+  font-size:30px;
+  margin-bottom:5px;
+}
+
+.hero-text h3{
+  font-family:'Crimson Text', serif;
+  font-weight:400;
+  font-size:22px;
+  margin-bottom:20px;
+  color:#7b1e2b;
+}
+
+.hero-text p{
+  font-size:18px;
+  max-width:500px;
+  line-height:1.7;
+  color:#555;
+}
+
+/* PHOTO */
+.hero-photo{
+  flex:1;
+  display:flex;
+  justify-content:center;
+}
+
+.hero-photo img{
+  width:280px;
+  height:280px;
+  object-fit:cover;
+  border-radius:50%;
+  border:8px solid #7b1e2b;
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* BOOK IMAGE */
+.book-image{
+  margin-top:60px;
+}
+
+.book-image img{
+  width:100%;
+  height:400px;
+  object-fit:cover;
+  border-radius:25px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero-content{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-text p{
+    margin:0 auto;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- NAVBAR -->
 <div class="navbar">
-  <div class="logo">Syifa Nabila Story House 📖✨</div>
+  <div class="logo">Syifa Nabila Story House 📚</div>
 
   <div class="nav-links">
     <div class="dropdown">
-      <a>About Me ▾</a>
+      <div class="about-btn">About Me</div>
       <div class="dropdown-content">
-        <a href="https://instagram.com/usernamekamu" target="_blank">
+        <a href="https://www.instagram.com/syfnbilah?igsh=MWFjeGhhZW05YWM3cg%3D%3D&utm_source=qr" target="_blank">
           Sosial Media
         </a>
-        <a href="https://drive.google.com/file/d/123456789/view" target="_blank">
+        <a href="https://drive.google.com/file/d/1V8x_vlSIHLk6N0AyGQNuhVLy-oytOJjq/view?usp=drivesdk" target="_blank">
           Curriculum Vitae
         </a>
       </div>
@@ -133,18 +196,32 @@ body {
   </div>
 </div>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section class="hero">
 
-  <h1>Library of Syifa Nabila</h1>
+  <div class="hero-content">
 
-  <p>
-    Sebuah perpustakaan yang akan membawa anda menuju pengetahuan
-  </p>
+    <div class="hero-text">
+      <h1>Library of Syifa Nabila</h1>
 
-  <div class="hero-image">
+      <h2>Syifa Nabila Harahap</h2>
+      <h3>S-1 Perpustakaan dan Sains Informasi</h3>
+
+      <p>
+        Sebuah perpustakaan yang akan membawa anda menuju pengetahuan
+      </p>
+    </div>
+
+    <div class="hero-photo">
+      <!-- SIMPAN FOTO KAMU DENGAN NAMA profile.jpg -->
+      <img src="profile.jpg" alt="Syifa Nabila">
+    </div>
+
+  </div>
+
+  <div class="book-image">
     <!-- Gambar buku estetik dominan merah -->
-    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1600&q=80" alt="Red Aesthetic Books">
+    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80" alt="Red Aesthetic Books">
   </div>
 
 </section>
