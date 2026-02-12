@@ -21,33 +21,50 @@ body{
 /* ================= NAVBAR ================= */
 .navbar{
   position:absolute;
-  top:0;
+  top:30px;
   width:100%;
-  padding:25px 60px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  color:white;
+  padding:0 60px;
   z-index:10;
 }
 
+/* Logo kotak */
 .logo{
-  font-size:18px; /* diperkecil */
-  letter-spacing:1px;
+  background:rgba(255,255,255,0.9);
+  padding:10px 20px;
+  border-radius:8px;
+  font-size:16px;
+  color:#7b1e2b;
+}
+
+/* Menu kotak */
+.nav-links{
+  display:flex;
+  gap:15px;
 }
 
 .nav-links a{
-  margin-left:30px;
   text-decoration:none;
+  background:rgba(255,255,255,0.9);
+  padding:10px 18px;
+  border-radius:8px;
+  color:#7b1e2b;
+  font-size:15px;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  background:#7b1e2b;
   color:white;
-  font-size:16px;
 }
 
 /* ================= HERO ================= */
 .hero{
   height:100vh;
   background-image:url('books.jpg'); 
-  /* GANTI DENGAN NAMA FILE FOTO YANG KAMU KIRIM */
+  /* SIMPAN FOTO BUKU YANG KAMU KIRIM DENGAN NAMA books.jpg */
   background-size:cover;
   background-position:center;
   display:flex;
@@ -147,6 +164,11 @@ body{
   .hero-content h1{
     font-size:45px;
   }
+
+  .navbar{
+    flex-direction:column;
+    gap:15px;
+  }
 }
 </style>
 </head>
@@ -175,7 +197,7 @@ body{
 <section class="profile-section" id="profile">
   <div class="profile-card">
 
-    <!-- FOTO KAMU TARUH DI SINI -->
+    <!-- TARUH FOTO KAMU DI SINI -->
     <div class="profile-photo">
       <img src="fotoku.jpg" alt="Syifa Nabila">
     </div>
