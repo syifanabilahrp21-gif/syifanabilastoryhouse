@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Library of Syifa Nabila</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+<!-- FONT SERIF ELEGAN (mirip contoh) -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -15,100 +16,151 @@
 }
 
 body{
-  background:#7b1e2b; /* maroon luar */
-  font-family:'Crimson Text', serif;
+  font-family: 'Playfair Display', serif;
+  background:#fff;
 }
 
-/* CONTAINER PUTIH */
-.container{
-  background:white;
-  max-width:1200px;
-  margin:40px auto;
-  border-radius:20px;
-  padding:60px;
+/* ================= NAVBAR ================= */
+.navbar{
+  position:absolute;
+  top:0;
+  width:100%;
+  padding:25px 60px;
+  color:white;
+  z-index:10;
 }
 
-/* JUDUL ATAS */
-.title{
-  text-align:center;
-  font-family:'Libre Baskerville', serif;
-  font-size:42px;
-  margin-bottom:60px;
+.logo{
+  font-size:20px;
+  letter-spacing:1px;
 }
 
-/* CONTENT */
-.content{
+/* ================= HERO ================= */
+.hero{
+  height:100vh;
+  background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2000&q=100');
+  background-size:cover;
+  background-position:center;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:60px;
+  text-align:center;
+  position:relative;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(80,0,0,0.45); /* overlay maroon */
+  top:0;
+  left:0;
+}
+
+.hero-content{
+  position:relative;
+  color:white;
+  z-index:2;
+  max-width:900px;
+}
+
+.hero-content h1{
+  font-size:60px; /* lebih kecil dari contoh */
+  font-weight:600;
+  line-height:1.2;
+}
+
+/* ================= PROFILE SECTION ================= */
+.profile-section{
+  padding:120px 20px;
+  background:#f8f4f4;
+  display:flex;
+  justify-content:center;
+}
+
+.profile-card{
+  background:white;
+  padding:60px;
+  border-radius:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.08);
+  text-align:center;
+  max-width:600px;
+}
+
+.profile-card h2{
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.profile-card h3{
+  font-size:24px;
+  font-weight:400;
+  margin-bottom:40px;
+}
+
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
   flex-wrap:wrap;
 }
 
-/* FOTO PROFIL */
-.profile img{
-  width:260px;
-  height:260px;
-  border-radius:50%;
-  object-fit:cover;
-  border:4px solid #7b1e2b; /* lebih kecil */
+.buttons a{
+  text-decoration:none;
+  padding:14px 28px;
+  border:1px solid #7b1e2b;
+  color:#7b1e2b;
+  border-radius:30px;
+  transition:0.3s;
 }
 
-/* TEXT */
-.text h2{
-  font-size:36px;
-  margin-bottom:20px;
+.buttons a:hover{
+  background:#7b1e2b;
+  color:white;
 }
 
-.text h3{
-  font-size:30px;
-  font-weight:600;
-}
-
-/* FOTO BESAR BUKU */
-.book-section{
-  margin-top:70px;
-}
-
-.book-section img{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-  border-radius:20px;
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero-content h1{
+    font-size:40px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-
-  <div class="title">
-    LIBRARY OF SYIFA NABILA HARAHAP
-  </div>
-
-  <div class="content">
-    
-    <div class="profile">
-      <!-- FOTO KAMU -->
-      <img src="profile.jpg.jpeg" alt="Syifa Nabila">
-    </div>
-
-    <div class="text">
-      <h2>Syifa Nabila Harahap</h2>
-      <h3>S-1 Perpustakaan dan Sains Informasi</h3>
-    </div>
-
-  </div>
-
-  <!-- FOTO BUKU BESAR -->
-  <div class="book-section">
-    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80" alt="Red Books">
-  </div>
-
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">Syifa Nabila Story House</div>
 </div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Welcome to<br>Library of Syifa Nabila</h1>
+  </div>
+</section>
+
+<!-- PROFILE SECTION -->
+<section class="profile-section">
+  <div class="profile-card">
+    <h2>Syifa Nabila Harahap</h2>
+    <h3>S-1 Perpustakaan dan Sains Informasi</h3>
+
+    <div class="buttons">
+      <a href="https://www.instagram.com/syfnbilah?" target="_blank">
+        Sosial Media
+      </a>
+      <a href="https://drive.google.com/file/d/1V8x_vlSIHLk6N0AyGQNuhVLy-oytOJjq/view?usp=drivesdk" target="_blank">
+        Curriculum Vitae
+      </a>
+    </div>
+
+  </div>
+</section>
 
 </body>
 </html>
-
 
