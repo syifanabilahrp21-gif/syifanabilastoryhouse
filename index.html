@@ -19,7 +19,7 @@ body{
   font-family: 'Playfair Display', serif;
 }
 
-/* ================= HEADER FIXED ================= */
+/* ================= HEADER ================= */
 .navbar{
   position:fixed;
   top:0;
@@ -28,12 +28,11 @@ body{
   justify-content:space-between;
   align-items:center;
   padding:20px 60px;
-  background:#800020; /* MERAH MARUN */
+  background:#800020;
   z-index:1000;
 }
 
 .logo{
-  font-size:16px;
   color:white;
   font-weight:600;
 }
@@ -46,7 +45,6 @@ body{
 .nav-links a{
   text-decoration:none;
   color:white;
-  font-size:15px;
   transition:0.3s;
 }
 
@@ -57,9 +55,7 @@ body{
 /* ================= HERO ================= */
 .hero{
   height:100vh;
-  background-image:url('books.jpg');
-  background-size:cover;
-  background-position:center;
+  background:url('books.jpg') center/cover;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -73,33 +69,25 @@ body{
   position:absolute;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.35);
-  top:0;
-  left:0;
+  background:rgba(0,0,0,0.4);
 }
 
 .hero-content{
   position:relative;
   z-index:2;
-  max-width:1000px;
   color:white;
 }
 
 .hero-content h1{
-  font-size:70px;
-  font-weight:800;
+  font-size:60px;
   margin-bottom:30px;
 }
 
-/* SEARCH BAR */
 .search-box input{
-  width:350px;
-  max-width:90%;
   padding:15px 20px;
+  width:320px;
   border-radius:30px;
   border:none;
-  font-size:16px;
-  outline:none;
 }
 
 .search-box button{
@@ -108,21 +96,21 @@ body{
   border-radius:30px;
   background:#800020;
   color:white;
-  cursor:pointer;
   margin-left:10px;
+  cursor:pointer;
 }
 
 /* ================= KOLEKSI ================= */
 .collection-section{
   padding:120px 40px;
-  background:#f5e6d3; /* CREAM */
+  background:#800020; /* MARUN */
 }
 
 .collection-section h2{
   text-align:center;
   font-size:35px;
   margin-bottom:60px;
-  color:#3a1b1f;
+  color:white;
 }
 
 .book-grid{
@@ -133,9 +121,9 @@ body{
 
 .book-card{
   background:white;
-  padding:25px;
   border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
   transition:0.3s;
 }
 
@@ -143,29 +131,39 @@ body{
   transform:translateY(-5px);
 }
 
-.book-card h3{
+.book-card img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+}
+
+.book-info{
+  padding:20px;
+}
+
+.book-info h3{
   color:#800020;
   margin-bottom:10px;
 }
 
-.book-card p{
+.book-info p{
   font-size:14px;
   color:#555;
 }
 
-/* ================= PROFILE SECTION ================= */
+/* ================= PROFILE ================= */
 .profile-section{
   padding:120px 20px;
-  background:#f5e6d3; /* CREAM */
+  background:#800020; /* MARUN */
   display:flex;
   justify-content:center;
 }
 
 .profile-card{
-  background:white;
+  background:#f5e6d3; /* CREAM */
   padding:60px;
   border-radius:20px;
-  box-shadow:0 20px 60px rgba(0,0,0,0.15);
+  box-shadow:0 20px 60px rgba(0,0,0,0.3);
   text-align:center;
   max-width:700px;
 }
@@ -179,47 +177,6 @@ body{
   margin-bottom:30px;
 }
 
-.profile-card h2{
-  font-size:30px;
-  margin-bottom:10px;
-  color:#3a1b1f;
-}
-
-.profile-card h3{
-  font-size:22px;
-  font-weight:400;
-  margin-bottom:20px;
-  color:#3a1b1f;
-}
-
-.profile-description{
-  font-size:16px;
-  line-height:1.7;
-  color:#444;
-  margin-bottom:40px;
-}
-
-.buttons{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.buttons a{
-  text-decoration:none;
-  padding:12px 25px;
-  border:1px solid #800020;
-  color:#800020;
-  border-radius:30px;
-  transition:0.3s;
-}
-
-.buttons a:hover{
-  background:#800020;
-  color:white;
-}
-
 /* ================= VIDEO ================= */
 .video-section{
   background:#800020;
@@ -229,21 +186,14 @@ body{
 
 .video-section h2{
   color:white;
-  font-size:32px;
   margin-bottom:40px;
-}
-
-.video-container{
-  width:100%;
-  max-width:900px;
-  margin:0 auto;
 }
 
 .video-container iframe{
   width:100%;
+  max-width:900px;
   height:500px;
   border-radius:20px;
-  box-shadow:0 20px 60px rgba(0,0,0,0.3);
 }
 
 /* RESPONSIVE */
@@ -251,22 +201,12 @@ body{
   .hero-content h1{
     font-size:40px;
   }
-
-  .navbar{
-    flex-direction:column;
-    gap:10px;
-  }
-
-  .video-container iframe{
-    height:300px;
-  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <div class="navbar">
   <div class="logo">Syifa Nabila Story House</div>
   <div class="nav-links">
@@ -276,42 +216,44 @@ body{
   </div>
 </div>
 
-<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-content">
     <h1>Welcome to Library of Syifa Nabila</h1>
-
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Cari koleksi, artikel atau topik...">
+      <input type="text" id="searchInput" placeholder="Cari koleksi atau topik...">
       <button onclick="searchBooks()">Cari</button>
     </div>
-
   </div>
 </section>
 
 <!-- KOLEKSI -->
 <section class="collection-section" id="collection">
   <h2>Koleksi Buku</h2>
-  <div class="book-grid" id="bookList">
+
+  <div class="book-grid">
 
     <div class="book-card">
-      <h3>Manajemen Perpustakaan Modern</h3>
-      <p>Kategori: Manajemen Informasi</p>
+      <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c" alt="Buku 1">
+      <div class="book-info">
+        <h3>Manajemen Perpustakaan Modern</h3>
+        <p>Kategori: Manajemen Informasi</p>
+      </div>
     </div>
 
     <div class="book-card">
-      <h3>Digital Library Transformation</h3>
-      <p>Kategori: Teknologi Informasi</p>
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="Buku 2">
+      <div class="book-info">
+        <h3>Digital Library Transformation</h3>
+        <p>Kategori: Teknologi Informasi</p>
+      </div>
     </div>
 
     <div class="book-card">
-      <h3>Klasifikasi dan Katalogisasi</h3>
-      <p>Kategori: Ilmu Perpustakaan</p>
-    </div>
-
-    <div class="book-card">
-      <h3>Information Literacy Skills</h3>
-      <p>Kategori: Edukasi</p>
+      <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794" alt="Buku 3">
+      <div class="book-info">
+        <h3>Klasifikasi dan Katalogisasi</h3>
+        <p>Kategori: Ilmu Perpustakaan</p>
+      </div>
     </div>
 
   </div>
@@ -327,28 +269,12 @@ body{
     <h2>Syifa Nabila Harahap</h2>
     <h3>S-1 Perpustakaan dan Sains Informasi</h3>
 
-    <p class="profile-description">
-      Website ini disusun sebagai sarana pengembangan profesional sekaligus media berbagi pengetahuan 
-      dan praktik pengelolaan informasi yang sistematis, akurat, dan berkelanjutan.
+    <p>
+      Website ini disusun sebagai sarana pengembangan profesional sekaligus media berbagi pengetahuan dan praktik pengelolaan informasi yang sistematis, akurat, dan berkelanjutan.
     </p>
-
-    <div class="buttons">
-      <a href="https://www.instagram.com/syfnbilah?" target="_blank">Sosial Media</a>
-      <a href="https://drive.google.com/file/d/1V8x_vlSIHLk6N0AyGQNuhVLy-oytOJjq/view?usp=drivesdk" target="_blank">Curriculum Vitae</a>
-    </div>
-
   </div>
 </section>
 
-<!-- VIDEO -->
-<section class="video-section">
-  <h2>Video Inspiratif</h2>
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/e10yVhdvJak" allowfullscreen></iframe>
-  </div>
-</section>
-
-<!-- SCRIPT SEARCH -->
 <script>
 function searchBooks(){
   let input = document.getElementById("searchInput").value.toLowerCase();
