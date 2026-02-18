@@ -4,341 +4,371 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Library of Syifa Nabila</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
 }
 
 body{
-font-family:'Playfair Display', serif;
+  font-family:'Playfair Display', serif;
 }
 
 /* ================= HEADER ================= */
 .navbar{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 60px;
-background:#800020;
-z-index:1000;
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  background:#800020;
+  z-index:1000;
 }
 
 .logo{
-font-size:16px;
-color:white;
-font-weight:600;
+  font-size:16px;
+  color:white;
+  font-weight:600;
 }
 
 .nav-links{
-display:flex;
-gap:20px;
+  display:flex;
+  gap:20px;
 }
 
 .nav-links a{
-text-decoration:none;
-color:white;
-font-size:15px;
-cursor:pointer;
-transition:0.3s;
+  text-decoration:none;
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+  transition:0.3s;
 }
 
 .nav-links a:hover{
-opacity:0.7;
+  opacity:0.7;
 }
 
 /* ================= HERO ================= */
 .hero{
-height:100vh;
-background-image:url('books.jpg');
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-position:relative;
-padding-top:100px;
+  height:100vh;
+  background-image:url('books.jpg');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  padding-top:100px;
 }
 
 .hero::after{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.35);
-top:0;
-left:0;
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.35);
+  top:0;
+  left:0;
 }
 
 .hero-content{
-position:relative;
-z-index:2;
-color:white;
+  position:relative;
+  z-index:2;
+  color:white;
 }
 
 .hero-content h1{
-font-size:70px;
-font-weight:800;
-margin-bottom:30px;
+  font-size:70px;
+  font-weight:800;
+  margin-bottom:30px;
 }
 
 /* ================= SEARCH ================= */
 .search-box{
-margin-top:20px;
-display:flex;
-justify-content:center;
-gap:10px;
+  margin-top:20px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
 }
 
 .search-box input{
-padding:12px 20px;
-border-radius:30px;
-border:none;
-width:300px;
-font-size:14px;
+  padding:12px 20px;
+  border-radius:30px;
+  border:none;
+  width:300px;
+  font-size:14px;
 }
 
 .search-box button{
-padding:12px 25px;
-border-radius:30px;
-border:none;
-background:#800020;
-color:white;
-cursor:pointer;
-transition:0.3s;
+  padding:12px 25px;
+  border-radius:30px;
+  border:none;
+  background:#800020;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
 }
 
 .search-box button:hover{
-background:#a00028;
+  background:#a00028;
 }
 
 /* ================= LOGIN ================= */
 .login-page{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#800020;
-justify-content:center;
-align-items:center;
-z-index:2000;
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#800020;
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
 }
 
 .login-container{
-position:relative;
-background:white;
-padding:60px;
-border-radius:20px;
-width:100%;
-max-width:500px;
-box-shadow:0 20px 60px rgba(0,0,0,0.3);
-text-align:center;
+  position:relative;
+  background:white;
+  padding:60px;
+  border-radius:20px;
+  width:100%;
+  max-width:500px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.3);
+  text-align:center;
 }
 
 .close-btn{
-position:absolute;
-top:15px;
-right:20px;
-font-size:20px;
-cursor:pointer;
-color:#800020;
-transition:0.3s;
+  position:absolute;
+  top:15px;
+  right:20px;
+  font-size:20px;
+  cursor:pointer;
+  color:#800020;
+  transition:0.3s;
 }
 
 .close-btn:hover{
-opacity:0.6;
+  opacity:0.6;
 }
 
 .login-container h2{
-margin-bottom:30px;
-color:#800020;
+  margin-bottom:30px;
+  color:#800020;
 }
 
 .login-container input{
-width:100%;
-padding:15px;
-margin-bottom:20px;
-border-radius:10px;
-border:1px solid #ccc;
-font-size:14px;
+  width:100%;
+  padding:15px;
+  margin-bottom:20px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  font-size:14px;
 }
 
 .login-container button{
-width:100%;
-padding:15px;
-border:none;
-border-radius:30px;
-background:#800020;
-color:white;
-font-size:16px;
-cursor:pointer;
-opacity:0.5;
-transition:0.3s;
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:30px;
+  background:#800020;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  opacity:0.5;
+  transition:0.3s;
 }
 
 .login-container button:enabled{
-opacity:1;
+  opacity:1;
 }
 
 .login-container button:hover:enabled{
-background:#a00028;
+  background:#a00028;
 }
 
-/* ================= CONTACT US ================= */
+/* ================= CONTACT ================= */
 .contact-page{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#800020;
-justify-content:center;
-align-items:center;
-z-index:2000;
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#800020;
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
 }
 
 .contact-container{
-position:relative;
-background:white;
-padding:60px;
-border-radius:20px;
-width:100%;
-max-width:500px;
-box-shadow:0 20px 60px rgba(0,0,0,0.3);
-text-align:center;
+  position:relative;
+  background:white;
+  padding:60px;
+  border-radius:20px;
+  width:100%;
+  max-width:500px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.3);
+  text-align:center;
 }
 
 .contact-container h2{
-margin-bottom:30px;
-color:#800020;
+  margin-bottom:30px;
+  color:#800020;
 }
 
 .contact-container textarea{
-width:100%;
-height:150px;
-padding:15px;
-border-radius:10px;
-border:1px solid #ccc;
-margin-bottom:20px;
-font-size:14px;
-resize:none;
+  width:100%;
+  height:150px;
+  padding:15px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  margin-bottom:20px;
+  font-size:14px;
+  resize:none;
 }
 
 .contact-container button{
-width:100%;
-padding:15px;
-border:none;
-border-radius:30px;
-background:#800020;
-color:white;
-font-size:16px;
-cursor:pointer;
-transition:0.3s;
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:30px;
+  background:#800020;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  opacity:0.5;
+  transition:0.3s;
 }
 
-.contact-container button:hover{
-background:#a00028;
+.contact-container button:enabled{
+  opacity:1;
 }
 
+.contact-container button:hover:enabled{
+  background:#a00028;
+}
 </style>
 </head>
 
 <body>
 
 <div class="navbar">
-<div class="logo">Syifa Nabila Story House</div>
-<div class="nav-links">
-<a href="#home">Home</a>
-<a onclick="openLogin()">Login</a>
-<a href="#collection">Koleksi</a>
-<a href="#profile">About Me</a>
-<a onclick="openContact()">Contact Us</a>
-</div>
+  <div class="logo">Syifa Nabila Story House</div>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a onclick="openLogin()">Login</a>
+    <a href="#collection">Koleksi</a>
+    <a href="#profile">About Me</a>
+    <a onclick="openContact()">Contact Us</a>
+  </div>
 </div>
 
 <section class="hero" id="home">
-<div class="hero-content">
-<h1>Welcome to Library of Syifa Nabila</h1>
-<div class="search-box">
-<input type="text" id="searchInput" placeholder="Cari koleksi, artikel atau topik...">
-<button onclick="searchBooks()">Cari</button>
-</div>
-</div>
+  <div class="hero-content">
+    <h1>Welcome to Library of Syifa Nabila</h1>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Cari koleksi, artikel atau topik...">
+      <button onclick="searchBooks()">Cari</button>
+    </div>
+  </div>
 </section>
 
 <!-- LOGIN -->
 <div class="login-page" id="loginPage">
-<div class="login-container">
-<span class="close-btn" onclick="closeLogin()">❌</span>
-<h2>Login</h2>
-<form id="loginForm">
-<input type="text" placeholder="First Name" required>
-<input type="text" placeholder="Last Name" required>
-<input type="text" placeholder="Email" required>
-<input type="text" placeholder="No Telephone" required>
-<input type="password" placeholder="Password" required>
-<button type="submit" id="loginBtn" disabled>Login</button>
-</form>
-</div>
+  <div class="login-container">
+    <span class="close-btn" onclick="closeLogin()">❌</span>
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" placeholder="First Name" required>
+      <input type="text" placeholder="Last Name" required>
+      <input type="text" placeholder="Email" required>
+      <input type="text" placeholder="No Telephone" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit" id="loginBtn" disabled>Login</button>
+    </form>
+  </div>
 </div>
 
-<!-- CONTACT US -->
+<!-- CONTACT -->
 <div class="contact-page" id="contactPage">
-<div class="contact-container">
-<span class="close-btn" onclick="closeContact()">❌</span>
-<h2>Contact Us</h2>
-<textarea placeholder="Tulis pesan kamu di sini..." required></textarea>
-<button onclick="sendMessage()">Send</button>
-</div>
+  <div class="contact-container">
+    <span class="close-btn" onclick="closeContact()">❌</span>
+    <h2>Contact Us</h2>
+    <textarea id="messageInput" placeholder="Tulis pesan kamu di sini..."></textarea>
+    <button id="sendBtn" disabled onclick="sendMessage()">Send</button>
+  </div>
 </div>
 
 <script>
+// LOGIN (TIDAK DIUBAH)
+function openLogin(){ document.getElementById("loginPage").style.display="flex"; }
+function closeLogin(){ document.getElementById("loginPage").style.display="none"; }
 
-function openLogin(){
-document.getElementById("loginPage").style.display="flex";
-}
-
-function closeLogin(){
-document.getElementById("loginPage").style.display="none";
-}
-
-function openContact(){
-document.getElementById("contactPage").style.display="flex";
-}
-
-function closeContact(){
-document.getElementById("contactPage").style.display="none";
-}
-
-function sendMessage(){
-alert("Pesan berhasil dikirim 😊");
-closeContact();
-}
-
-document.getElementById("contactPage").addEventListener("click",function(e){
-if(e.target===this){
-closeContact();
-}
+document.getElementById("loginPage").addEventListener("click",function(e){
+  if(e.target===this){ closeLogin(); }
 });
 
 document.addEventListener("keydown",function(e){
-if(e.key==="Escape"){
-closeLogin();
-closeContact();
-}
+  if(e.key==="Escape"){
+    closeLogin();
+    closeContact();
+  }
 });
 
+const inputs=document.querySelectorAll("#loginForm input");
+const loginBtn=document.getElementById("loginBtn");
+
+inputs.forEach(input=>{
+  input.addEventListener("input",()=>{
+    let allFilled=true;
+    inputs.forEach(field=>{
+      if(field.value.trim()===""){ allFilled=false; }
+    });
+    loginBtn.disabled=!allFilled;
+  });
+});
+
+document.getElementById("loginForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  alert("Login berhasil 😊");
+  closeLogin();
+});
+
+// CONTACT
+function openContact(){
+  document.getElementById("contactPage").style.display="flex";
+}
+
+function closeContact(){
+  document.getElementById("contactPage").style.display="none";
+}
+
+document.getElementById("contactPage").addEventListener("click",function(e){
+  if(e.target===this){ closeContact(); }
+});
+
+const messageInput=document.getElementById("messageInput");
+const sendBtn=document.getElementById("sendBtn");
+
+messageInput.addEventListener("input",function(){
+  sendBtn.disabled = messageInput.value.trim()==="";
+});
+
+function sendMessage(){
+  alert("Pesan berhasil dikirim 😊");
+  messageInput.value="";
+  sendBtn.disabled=true;
+  closeContact();
+}
 </script>
 
 </body>
