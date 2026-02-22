@@ -19,7 +19,7 @@ body{
   font-family: 'Playfair Display', serif;
 }
 
-/* ================= HEADER FIXED ================= */
+/* ================= HEADER ================= */
 .navbar{
   position:fixed;
   top:0;
@@ -47,6 +47,7 @@ body{
   text-decoration:none;
   color:white;
   font-size:15px;
+  cursor:pointer;
   transition:0.3s;
 }
 
@@ -86,36 +87,14 @@ body{
 }
 
 .hero-content h1{
-  font-size:70px;
-  font-weight:800;
+  font-size:60px;
   margin-bottom:30px;
-}
-
-/* SEARCH BAR */
-.search-box input{
-  width:350px;
-  max-width:90%;
-  padding:15px 20px;
-  border-radius:30px;
-  border:none;
-  font-size:16px;
-  outline:none;
-}
-
-.search-box button{
-  padding:15px 25px;
-  border:none;
-  border-radius:30px;
-  background:#800020;
-  color:white;
-  cursor:pointer;
-  margin-left:10px;
 }
 
 /* ================= KOLEKSI ================= */
 .collection-section{
   padding:120px 40px;
-  background:#800020;  /* DIGANTI MARUN */
+  background:#800020;
   color:white;
 }
 
@@ -123,7 +102,6 @@ body{
   text-align:center;
   font-size:35px;
   margin-bottom:60px;
-  color:white;
 }
 
 .book-grid{
@@ -154,10 +132,10 @@ body{
   color:#555;
 }
 
-/* ================= PROFILE SECTION ================= */
+/* ================= PROFILE ================= */
 .profile-section{
   padding:120px 20px;
-  background:#800020;  /* DIGANTI MARUN */
+  background:#800020;
   display:flex;
   justify-content:center;
 }
@@ -247,21 +225,7 @@ body{
   box-shadow:0 20px 60px rgba(0,0,0,0.3);
 }
 
-/* RESPONSIVE */
-@media(max-width:768px){
-  .hero-content h1{
-    font-size:40px;
-  }
-
-  .navbar{
-    flex-direction:column;
-    gap:10px;
-  }
-
-  .video-container iframe{
-    height:300px;
-  }
-/* LOGIN MODAL */
+/* ================= LOGIN MODAL ================= */
 .login-modal{
   position:fixed;
   top:0;
@@ -294,6 +258,30 @@ body{
   to{transform:scale(1); opacity:1;}
 }
 
+.login-box h2{
+  color:#800020;
+  margin-bottom:20px;
+}
+
+.login-box input{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+.login-box button{
+  width:100%;
+  padding:12px;
+  margin-top:15px;
+  border:none;
+  background:#800020;
+  color:white;
+  border-radius:25px;
+  cursor:pointer;
+}
+
 .close-btn{
   position:absolute;
   right:15px;
@@ -301,6 +289,22 @@ body{
   font-size:22px;
   cursor:pointer;
   color:#800020;
+  font-weight:bold;
+}
+
+@media(max-width:768px){
+  .hero-content h1{
+    font-size:40px;
+  }
+
+  .navbar{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .video-container iframe{
+    height:300px;
+  }
 }
 </style>
 </head>
@@ -311,47 +315,37 @@ body{
   <div class="logo">Syifa Nabila Story House</div>
   <div class="nav-links">
     <a href="#home">Home</a>
-    <a href="#collection">Collection</a>
+    <a href="#collection">Koleksi</a>
     <a href="#profile">About Me</a>
-    <a href="#" onclick="openLogin()">Login</a>
+    <a onclick="openLogin()">Login</a>
   </div>
 </div>
 
 <section class="hero" id="home">
   <div class="hero-content">
     <h1>Welcome to Library of Syifa Nabila</h1>
-
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Cari koleksi, artikel atau topik...">
-      <button onclick="searchBooks()">Cari</button>
-    </div>
   </div>
 </section>
 
 <section class="collection-section" id="collection">
   <h2>Koleksi Buku</h2>
   <div class="book-grid" id="bookList">
-
     <div class="book-card">
       <h3>Manajemen Perpustakaan Modern</h3>
       <p>Kategori: Manajemen Informasi</p>
     </div>
-
     <div class="book-card">
       <h3>Digital Library Transformation</h3>
       <p>Kategori: Teknologi Informasi</p>
     </div>
-
     <div class="book-card">
       <h3>Klasifikasi dan Katalogisasi</h3>
       <p>Kategori: Ilmu Perpustakaan</p>
     </div>
-
     <div class="book-card">
       <h3>Information Literacy Skills</h3>
       <p>Kategori: Edukasi</p>
     </div>
-
   </div>
 </section>
 
@@ -360,19 +354,12 @@ body{
     <div class="profile-photo">
       <img src="fotoku.jpg" alt="Syifa Nabila">
     </div>
-
     <h2>Syifa Nabila Harahap</h2>
     <h3>S-1 Perpustakaan dan Sains Informasi</h3>
-
     <p class="profile-description">
-      Website ini disusun sebagai sarana pengembangan profesional sekaligus media berbagi pengetahuan 
+      Website ini disusun sebagai sarana pengembangan profesional sekaligus media berbagi pengetahuan
       dan praktik pengelolaan informasi yang sistematis, akurat, dan berkelanjutan.
     </p>
-
-    <div class="buttons">
-      <a href="https://www.instagram.com/syfnbilah?" target="_blank">Sosial Media</a>
-      <a href="https://drive.google.com/file/d/1V8x_vlSIHLk6N0AyGQNuhVLy-oytOJjq/view?usp=drivesdk" target="_blank">Curriculum Vitae</a>
-    </div>
   </div>
 </section>
 
@@ -383,9 +370,22 @@ body{
   </div>
 </section>
 
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="login-modal">
+  <div class="login-box">
+    <span class="close-btn" onclick="closeLogin()">×</span>
+    <h2>Login</h2>
+    <input type="text" id="firstName" placeholder="First Name">
+    <input type="text" id="lastName" placeholder="Last Name">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <input type="text" id="phone" placeholder="No Telephone">
+    <button onclick="submitLogin()">Login</button>
+  </div>
+</div>
+
 <script>
-function searchBooks(){
-  function openLogin(){
+function openLogin(){
   document.getElementById("loginModal").classList.add("active");
 }
 
@@ -399,6 +399,7 @@ window.onclick = function(event){
     closeLogin();
   }
 }
+
 function submitLogin(){
   let firstName = document.getElementById("firstName").value.trim();
   let lastName = document.getElementById("lastName").value.trim();
@@ -406,7 +407,6 @@ function submitLogin(){
   let password = document.getElementById("password").value.trim();
   let phone = document.getElementById("phone").value.trim();
 
-  // Regex Validasi
   let nameRegex = /^[a-zA-Z0-9]+$/;
   let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   let phoneRegex = /^[0-9]+$/;
@@ -434,30 +434,7 @@ function submitLogin(){
   alert("Login berhasil!");
   closeLogin();
 }
-  let input = document.getElementById("searchInput").value.toLowerCase();
-  let books = document.getElementsByClassName("book-card");
-
-  for(let i = 0; i < books.length; i++){
-    let text = books[i].innerText.toLowerCase();
-    books[i].style.display = text.includes(input) ? "block" : "none";
-  }
-
-  document.getElementById("collection").scrollIntoView({behavior:"smooth"});
-}
 </script>
-<!-- LOGIN MODAL -->
-<div id="loginModal" class="login-modal">
-  <div class="login-box">
-    <span class="close-btn" onclick="closeLogin()">×</span>
-    <h2>Login</h2>
 
-    <input type="text" id="firstName" placeholder="First Name" required>
-    <input type="text" id="lastName" placeholder="Last Name" required>
-    <input type="email" id="email" placeholder="Email" required>
-    <input type="password" id="password" placeholder="Password" required>
-    <input type="text" id="phone" placeholder="No Telephone" required>
-    <button onclick="submitLogin()">Login</button>
-  </div>
-</div>
 </body>
-</html>   
+</html>
