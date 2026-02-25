@@ -30,7 +30,7 @@ transition:0.3s ease;
 
 .logo img:hover{transform:scale(1.1);}
 
-.nav-links{display:flex;gap:20px;}
+.nav-links{display:flex;gap:20px;align-items:center;}
 
 .nav-links a{
 text-decoration:none;color:white;font-size:15px;
@@ -38,6 +38,42 @@ cursor:pointer;transition:0.3s;
 }
 
 .nav-links a:hover{opacity:0.7;}
+
+/* DROPDOWN LOGIN */
+.dropdown{position:relative;}
+
+.dropbtn{
+color:white;
+font-size:15px;
+cursor:pointer;
+}
+
+.dropdown-content{
+display:none;
+position:absolute;
+top:30px;
+background:white;
+min-width:140px;
+border-radius:8px;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+overflow:hidden;
+}
+
+.dropdown-content a{
+color:#800020;
+padding:10px 15px;
+display:block;
+text-decoration:none;
+font-size:14px;
+}
+
+.dropdown-content a:hover{
+background:#f2f2f2;
+}
+
+.dropdown:hover .dropdown-content{
+display:block;
+}
 
 /* HERO */
 .hero{
@@ -160,7 +196,15 @@ box-shadow:0 20px 60px rgba(0,0,0,0.3);
 <a href="#collection">Koleksi</a>
 <a href="#profile">About Me</a>
 <a href="contact.html" target="_blank">Contact Us</a>
-<a href="login.html" target="_blank">Login</a>
+
+<div class="dropdown">
+<span class="dropbtn">Login</span>
+<div class="dropdown-content">
+<a href="signin.html" target="_blank">Sign In</a>
+<a href="signup.html" target="_blank">Sign Up</a>
+</div>
+</div>
+
 </div>
 </div>
 
