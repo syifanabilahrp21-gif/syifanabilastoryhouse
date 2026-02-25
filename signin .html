@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Sign In - Syifa Nabila</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+body{
+font-family:'Playfair Display', serif;
+background:#800020;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.container{
+background:white;
+padding:50px;
+border-radius:20px;
+width:380px;
+box-shadow:0 20px 60px rgba(0,0,0,0.3);
+text-align:center;
+}
+
+h2{
+color:#800020;
+margin-bottom:25px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:12px 0;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:14px;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:20px;
+border:none;
+background:#800020;
+color:white;
+border-radius:25px;
+cursor:pointer;
+font-size:15px;
+transition:0.3s;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+.back{
+margin-top:20px;
+display:block;
+color:#800020;
+text-decoration:none;
+font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>Sign In</h2>
+
+<input type="email" id="email" placeholder="Email">
+<input type="password" id="password" placeholder="Password">
+
+<button onclick="login()">Sign In</button>
+
+<a href="signup.html" class="back">Belum punya akun? Sign Up</a>
+</div>
+
+<script>
+function login(){
+let email=document.getElementById("email").value.trim();
+let password=document.getElementById("password").value.trim();
+
+let emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+if(!email || !password){
+alert("Semua field wajib diisi!");
+return;
+}
+
+if(!emailRegex.test(email)){
+alert("Format email tidak valid!");
+return;
+}
+
+alert("Login berhasil!");
+}
+</script>
+
+</body>
+</html>
