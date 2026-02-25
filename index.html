@@ -10,10 +10,7 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
-body{
-font-family:'Playfair Display', serif;
-background:linear-gradient(to bottom,#800020,#5c0018);
-}
+body{font-family:'Playfair Display', serif;}
 
 /* NAVBAR */
 .navbar{
@@ -34,55 +31,51 @@ transition:0.3s ease;
 
 .logo img:hover{transform:scale(1.1);}
 
+/* NAV LINKS */
 .nav-links{
 display:flex;
 align-items:center;
 }
 
-/* MENU */
-.nav-links a{
+/* Style link */
+.nav-links a,
+.dropbtn{
 text-decoration:none;
 color:white;
 font-size:15px;
-padding:0 15px;
 position:relative;
-}
-
-/* Garis pemisah */
-.nav-links a:not(:last-child)::after{
-content:"|";
-position:absolute;
-right:-5px;
-color:rgba(255,255,255,0.4);
-}
-
-/* LOGIN BULAT */
-.dropdown .dropbtn{
-background:white;
-color:#800020;
-padding:8px 18px;
-border-radius:30px;
-font-weight:600;
-margin-left:15px;
+padding:0 18px;
 cursor:pointer;
 transition:0.3s;
 }
 
-.dropdown .dropbtn:hover{
-background:#ffccd5;
+.nav-links a:hover,
+.dropbtn:hover{
+opacity:0.7;
+}
+
+/* Garis pemisah kecil */
+.nav-links a:not(:last-child)::after{
+content:"|";
+position:absolute;
+right:-4px;
+color:rgba(255,255,255,0.4);
+font-weight:300;
 }
 
 /* DROPDOWN */
-.dropdown{position:relative;}
+.dropdown{
+position:relative;
+margin-left:5px;
+}
 
 .dropdown-content{
 display:none;
 position:absolute;
-top:40px;
-right:0;
+top:35px;
 background:white;
 min-width:140px;
-border-radius:10px;
+border-radius:8px;
 box-shadow:0 8px 20px rgba(0,0,0,0.2);
 overflow:hidden;
 }
@@ -100,12 +93,18 @@ font-size:14px;
 
 /* HERO */
 .hero{
-height:100vh;
+height:100vh;background-image:url('books.jpg');
+background-size:cover;background-position:center;
 display:flex;align-items:center;justify-content:center;
-text-align:center;padding-top:100px;
+text-align:center;position:relative;padding-top:100px;
 }
 
-.hero-content{color:white;}
+.hero::after{
+content:"";position:absolute;width:100%;height:100%;
+background:rgba(0,0,0,0.35);top:0;left:0;
+}
+
+.hero-content{position:relative;z-index:2;color:white;}
 .hero-content h1{font-size:60px;margin-bottom:30px;}
 
 .search-box input{
@@ -115,14 +114,12 @@ border-radius:30px;border:none;font-size:16px;outline:none;
 
 .search-box button{
 padding:15px 25px;border:none;border-radius:30px;
-background:white;color:#800020;font-weight:bold;
-cursor:pointer;margin-left:10px;
+background:#800020;color:white;cursor:pointer;margin-left:10px;
 }
 
 /* KOLEKSI */
 .collection-section{
-padding:120px 40px;
-color:white;
+padding:120px 40px;background:#800020;color:white;
 }
 
 .collection-section h2{
@@ -146,30 +143,22 @@ transition:0.3s;
 
 /* ABOUT SECTION */
 .about-section{
-padding:120px 20px;
-display:flex;
-justify-content:center;
-opacity:0;
-transform:translateY(50px);
-transition:all 1s ease;
-}
-
-.about-section.show{
-opacity:1;
-transform:translateY(0);
+padding:140px 20px;
+background:linear-gradient(to bottom,#800020,#5c0018);
+display:flex;justify-content:center;
 }
 
 .about-container{
 background:white;
-padding:50px 60px;
-border-radius:20px;
-box-shadow:0 20px 60px rgba(0,0,0,0.3);
+max-width:900px;
+padding:70px;
+border-radius:25px;
+box-shadow:0 25px 70px rgba(0,0,0,0.3);
 text-align:center;
-max-width:750px;
 }
 
 .about-container h2{
-font-size:34px;
+font-size:36px;
 color:#800020;
 margin-bottom:30px;
 }
@@ -177,13 +166,13 @@ margin-bottom:30px;
 .about-container p{
 font-size:17px;
 line-height:1.9;
-color:#800020;
-margin-bottom:20px;
+color:#444;
+margin-bottom:25px;
 }
 
 /* VIDEO */
 .video-section{
-padding:100px 20px;text-align:center;
+background:#800020;padding:100px 20px;text-align:center;
 }
 
 .video-section h2{color:white;font-size:32px;margin-bottom:40px;}
@@ -267,6 +256,7 @@ padding-top:20px;
 <a href="signup.html" target="_blank">Sign Up</a>
 </div>
 </div>
+
 </div>
 </div>
 
@@ -293,10 +283,10 @@ padding-top:20px;
 <section class="about-section" id="about">
 <div class="about-container">
 <h2>About Us</h2>
-<p>Sa-Na Public Library merupakan platform perpustakaan umum digital berbasis web yang dikembangkan untuk memudahkan akses informasi dan bahan bacaan secara daring.</p>
-<p>Website ini memungkinkan pengguna mengakses koleksi kapan saja dan di mana saja tanpa batasan ruang dan waktu.</p>
-<p>Platform ini dilengkapi fitur pencarian dan pengelompokan koleksi berdasarkan kategori untuk membantu pengguna menemukan informasi secara cepat dan efisien.</p>
-<p>Dengan desain yang responsif dan tampilan yang sederhana, website ini diharapkan dapat mendukung literasi digital serta meningkatkan minat baca masyarakat di era transformasi digital.</p>
+<p>Sa-Na Public Library merupakan platform perpustakaan umum digital berbasis web yang dikembangkan untuk memudahkan akses informasi dan bahan bacaan secara daring.
+  Website ini memungkinkan pengguna mengakses koleksi kapan saja dan di mana saja tanpa batasan ruang dan waktu.</p>
+<p>Platform ini dilengkapi fitur pencarian dan pengelompokan koleksi berdasarkan kategori untuk membantu pengguna menemukan informasi secara cepat dan efisien.
+  Dengan desain yang responsif dan tampilan yang sederhana, website ini diharapkan dapat mendukung literasi digital serta meningkatkan minat baca masyarakat di era transformasi digital.</p>
 </div>
 </section>
 
@@ -343,16 +333,6 @@ books[i].style.display=text.includes(input)?"block":"none";
 document.getElementById("collection").scrollIntoView({behavior:"smooth"});
 }
 document.getElementById("year").innerHTML=new Date().getFullYear();
-
-/* Fade-in effect */
-window.addEventListener("scroll", function(){
-let about = document.querySelector(".about-section");
-let position = about.getBoundingClientRect().top;
-let screenHeight = window.innerHeight;
-if(position < screenHeight - 100){
-about.classList.add("show");
-}
-});
 </script>
 
 </body>
