@@ -31,13 +31,11 @@ transition:0.3s ease;
 
 .logo img:hover{transform:scale(1.1);}
 
-/* NAV LINKS */
 .nav-links{
 display:flex;
 align-items:center;
 }
 
-/* Style link */
 .nav-links a,
 .dropbtn{
 text-decoration:none;
@@ -50,11 +48,8 @@ transition:0.3s;
 }
 
 .nav-links a:hover,
-.dropbtn:hover{
-opacity:0.7;
-}
+.dropbtn:hover{opacity:0.7;}
 
-/* Garis pemisah kecil */
 .nav-links a:not(:last-child)::after{
 content:"|";
 position:absolute;
@@ -66,30 +61,41 @@ font-weight:300;
 /* DROPDOWN */
 .dropdown{
 position:relative;
+display:inline-block;
 margin-left:5px;
 }
 
 .dropdown-content{
-display:none;
 position:absolute;
-top:35px;
+top:100%;
+right:0;
 background:white;
-min-width:140px;
-border-radius:8px;
-box-shadow:0 8px 20px rgba(0,0,0,0.2);
+min-width:160px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
 overflow:hidden;
+opacity:0;
+visibility:hidden;
+transform:translateY(10px);
+transition:all 0.3s ease;
+z-index:2000;
 }
 
 .dropdown-content a{
 color:#800020;
-padding:10px 15px;
+padding:12px 18px;
 display:block;
 text-decoration:none;
 font-size:14px;
 }
 
-.dropdown-content a:hover{background:#f2f2f2;}
-.dropdown:hover .dropdown-content{display:block;}
+.dropdown-content a:hover{background:#f5f5f5;}
+
+.dropdown:hover .dropdown-content{
+opacity:1;
+visibility:visible;
+transform:translateY(0);
+}
 
 /* HERO */
 .hero{
@@ -141,7 +147,7 @@ transition:0.3s;
 .book-card h3{color:#800020;margin-bottom:10px;}
 .book-card p{font-size:14px;color:#555;}
 
-/* ABOUT SECTION */
+/* ABOUT */
 .about-section{
 padding:140px 20px;
 background:linear-gradient(to bottom,#800020,#5c0018);
@@ -256,7 +262,6 @@ padding-top:20px;
 <a href="signup.html" target="_blank">Sign Up</a>
 </div>
 </div>
-
 </div>
 </div>
 
@@ -283,10 +288,15 @@ padding-top:20px;
 <section class="about-section" id="about">
 <div class="about-container">
 <h2>About Us</h2>
-<p>Sa-Na Public Library merupakan platform perpustakaan umum digital berbasis web yang dikembangkan untuk memudahkan akses informasi dan bahan bacaan secara daring.
-  Website ini memungkinkan pengguna mengakses koleksi kapan saja dan di mana saja tanpa batasan ruang dan waktu.</p>
-<p>Platform ini dilengkapi fitur pencarian dan pengelompokan koleksi berdasarkan kategori untuk membantu pengguna menemukan informasi secara cepat dan efisien.
-  Dengan desain yang responsif dan tampilan yang sederhana, website ini diharapkan dapat mendukung literasi digital serta meningkatkan minat baca masyarakat di era transformasi digital.</p>
+<p>Sa-Na Public Library merupakan platform perpustakaan umum digital berbasis web yang
+  dikembangkan untuk memudahkan akses informasi dan bahan bacaan secara daring. Website
+  ini memungkinkan pengguna mengakses koleksi kapan saja dan di mana saja tanpa batasan
+  ruang dan waktu.</p>
+<p>Platform ini dilengkapi fitur pencarian dan pengelompokan koleksi berdasarkan kategori
+  untuk membantu pengguna menemukan informasi secara cepat dan efisien. Dengan desain
+  yang responsif dan tampilan yang sederhana, website ini diharapkan dapat mendukung 
+  literasi digital serta meningkatkan minat baca masyarakat di era transformasi 
+  digital.</p>
 </div>
 </section>
 
@@ -299,22 +309,27 @@ padding-top:20px;
 
 <footer class="footer">
 <div class="footer-container">
+
 <div>
-<h3>Jam Operasional</h3>
-<p>Senin - Jumat: 08.00 - 16.00</p>
-<p>Sabtu - Minggu: Tutup</p>
+<h3>Akses Layanan</h3>
+<p><i class="fa-solid fa-clock"></i> Akses Online 24 Jam</p>
+<p><i class="fa-solid fa-calendar"></i> Tersedia Setiap Hari</p>
+<p><i class="fa-solid fa-globe"></i> Tanpa Batasan Wilayah</p>
 </div>
+
 <div>
-<h3><i class="fa-solid fa-globe"></i> Layanan Digital</h3>
-<p><i class="fa-solid fa-clock"></i> Akses 24 Jam (Online)</p>
+<h3>Layanan Digital</h3>
 <p><i class="fa-solid fa-laptop"></i> Platform Berbasis Website</p>
-<p><i class="fa-solid fa-wifi"></i> Dapat Diakses dari Seluruh Indonesia</p>
+<p><i class="fa-solid fa-book"></i> Koleksi Digital Terintegrasi</p>
+<p><i class="fa-solid fa-magnifying-glass"></i> Fitur Pencarian Cepat</p>
 </div>
+
 <div>
 <h3>Kontak</h3>
-<p>Email: syifanabilahrp21@gmail.com</p>
-<p>Phone: 081269159137</p>
+<p><i class="fa-solid fa-envelope"></i> syifanabilahrp21@gmail.com</p>
+<p><i class="fa-solid fa-phone"></i> 081269159137</p>
 </div>
+
 </div>
 
 <div class="footer-bottom">
