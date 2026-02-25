@@ -8,85 +8,150 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
-body{
-font-family:'Playfair Display', serif;
-background:#800020;
+*{
 margin:0;
 padding:0;
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
+box-sizing:border-box;
 }
 
-.profile-card{
-background:white;
-padding:60px;
-border-radius:20px;
-box-shadow:0 20px 60px rgba(0,0,0,0.2);
-text-align:center;
-max-width:700px;
+body{
+font-family:'Playfair Display', serif;
+background:linear-gradient(135deg,#800020,#5c0018);
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:40px 20px;
+color:white;
+overflow:hidden;
+}
+
+/* CONTAINER */
+.admin-container{
+max-width:1100px;
+width:100%;
+display:flex;
+align-items:center;
+gap:60px;
+opacity:0;
+animation:fadeIn 1.2s ease forwards;
+}
+
+/* FOTO */
+.profile-photo{
+transform:translateX(-50px);
+opacity:0;
+animation:slideLeft 1s ease forwards;
+animation-delay:0.3s;
 }
 
 .profile-photo img{
-width:180px;
-height:180px;
+width:260px;
+height:260px;
 border-radius:50%;
 object-fit:cover;
-border:5px solid #800020;
-margin-bottom:30px;
+border:6px solid rgba(255,255,255,0.3);
+box-shadow:0 20px 50px rgba(0,0,0,0.4);
 }
 
-.profile-card h2{
-font-size:30px;
+/* TEKS */
+.profile-content{
+flex:1;
+transform:translateX(50px);
+opacity:0;
+animation:slideRight 1s ease forwards;
+animation-delay:0.5s;
+}
+
+.profile-content h2{
+font-size:38px;
 margin-bottom:10px;
-color:#3a1b1f;
 }
 
-.profile-card h3{
+.profile-content h3{
 font-size:22px;
 font-weight:400;
-margin-bottom:20px;
-color:#3a1b1f;
+margin-bottom:25px;
+opacity:0.9;
 }
 
 .profile-description{
-font-size:16px;
-line-height:1.7;
-color:#444;
+font-size:17px;
+line-height:1.8;
 margin-bottom:40px;
+max-width:650px;
 }
 
+/* BUTTON */
 .buttons{
 display:flex;
-justify-content:center;
 gap:20px;
 flex-wrap:wrap;
 }
 
 .buttons a{
 text-decoration:none;
-padding:12px 25px;
-border:1px solid #800020;
-color:#800020;
+padding:12px 28px;
+border:2px solid white;
+color:white;
 border-radius:30px;
 transition:0.3s;
+font-size:15px;
 }
 
 .buttons a:hover{
-background:#800020;
-color:white;
+background:white;
+color:#800020;
+transform:translateY(-3px);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+to{opacity:1;}
+}
+
+@keyframes slideLeft{
+to{
+transform:translateX(0);
+opacity:1;
+}
+}
+
+@keyframes slideRight{
+to{
+transform:translateX(0);
+opacity:1;
+}
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.admin-container{
+flex-direction:column;
+text-align:center;
+}
+
+.profile-photo img{
+width:200px;
+height:200px;
+}
+
+.profile-description{
+margin:auto;
+}
 }
 </style>
 </head>
 
 <body>
 
-<div class="profile-card">
+<div class="admin-container">
+
 <div class="profile-photo">
 <img src="fotoku.jpg" alt="Syifa Nabila">
 </div>
 
+<div class="profile-content">
 <h2>Syifa Nabila Harahap</h2>
 <h3>S-1 Perpustakaan dan Sains Informasi</h3>
 
@@ -98,6 +163,8 @@ Perpustakaan umum ini didirikan sebagai ruang belajar terbuka yang inklusif dan 
 <a href="https://www.instagram.com/syfnbilah?" target="_blank">Sosial Media</a>
 <a href="https://drive.google.com/file/d/1V8x_vlSIHLk6N0AyGQNuhVLy-oytOJjq/view?usp=drivesdk" target="_blank">Curriculum Vitae</a>
 </div>
+</div>
+
 </div>
 
 </body>
