@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sa-Na Public Library</title>
+<title>About Us - Sa-Na Public Library</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
-body{font-family:'Playfair Display', serif;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Playfair Display', serif;background:#800020;color:white;}
 
 /* NAVBAR */
 .navbar{
@@ -24,170 +24,76 @@ display:flex;align-items:center;gap:12px;
 color:white;font-size:16px;font-weight:600;
 }
 
-.logo img{
-height:45px;width:auto;object-fit:contain;
-transition:0.3s ease;
-}
+.logo img{height:45px;}
 
-.logo img:hover{transform:scale(1.1);}
-
-.nav-links{
-display:flex;
-align-items:center;
-}
+.nav-links{display:flex;align-items:center;}
 
 .nav-links a,
 .dropbtn{
-text-decoration:none;
-color:white;
-font-size:15px;
-position:relative;
-padding:0 18px;
-cursor:pointer;
-transition:0.3s;
+text-decoration:none;color:white;font-size:15px;
+position:relative;padding:0 18px;cursor:pointer;transition:0.3s;
 }
 
 .nav-links a:hover,
 .dropbtn:hover{opacity:0.7;}
 
 .nav-links a:not(:last-child)::after{
-content:"|";
-position:absolute;
-right:-4px;
+content:"|";position:absolute;right:-4px;
 color:rgba(255,255,255,0.4);
-font-weight:300;
 }
 
 /* DROPDOWN */
-.dropdown{
-position:relative;
-display:inline-block;
-margin-left:5px;
-}
+.dropdown{position:relative;display:inline-block;margin-left:5px;}
 
 .dropdown-content{
-position:absolute;
-top:100%;
-right:0;
-background:white;
-min-width:160px;
-border-radius:10px;
+position:absolute;top:100%;right:0;background:white;
+min-width:160px;border-radius:10px;
 box-shadow:0 10px 25px rgba(0,0,0,0.2);
-overflow:hidden;
-opacity:0;
-visibility:hidden;
-transform:translateY(10px);
-transition:all 0.3s ease;
-z-index:2000;
+opacity:0;visibility:hidden;
+transform:translateY(10px);transition:0.3s;
 }
 
 .dropdown-content a{
-color:#800020;
-padding:12px 18px;
-display:block;
-text-decoration:none;
-font-size:14px;
+color:#800020;padding:12px 18px;
+display:block;text-decoration:none;
 }
 
 .dropdown-content a:hover{background:#f5f5f5;}
 
 .dropdown:hover .dropdown-content{
-opacity:1;
-visibility:visible;
-transform:translateY(0);
+opacity:1;visibility:visible;transform:translateY(0);
 }
 
-/* HERO */
-.hero{
-height:100vh;background-image:url('books.jpg');
-background-size:cover;background-position:center;
-display:flex;align-items:center;justify-content:center;
-text-align:center;position:relative;padding-top:100px;
+/* CONTENT */
+.main{
+padding:150px 20px 80px;
+max-width:1000px;
+margin:auto;
 }
 
-.hero::after{
-content:"";position:absolute;width:100%;height:100%;
-background:rgba(0,0,0,0.35);top:0;left:0;
-}
-
-.hero-content{position:relative;z-index:2;color:white;}
-.hero-content h1{font-size:60px;margin-bottom:30px;}
-
-.search-box input{
-width:350px;max-width:90%;padding:15px 20px;
-border-radius:30px;border:none;font-size:16px;outline:none;
-}
-
-.search-box button{
-padding:15px 25px;border:none;border-radius:30px;
-background:#800020;color:white;cursor:pointer;margin-left:10px;
-}
-
-/* KOLEKSI */
-.collection-section{
-padding:120px 40px;background:#800020;color:white;
-}
-
-.collection-section h2{
-text-align:center;font-size:35px;margin-bottom:60px;
-}
-
-.book-grid{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-.book-card{
-background:white;padding:25px;border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
-transition:0.3s;
-}
-
-.book-card:hover{transform:translateY(-5px);}
-.book-card h3{color:#800020;margin-bottom:10px;}
-.book-card p{font-size:14px;color:#555;}
-
-/* ABOUT */
-.about-section{
-padding:140px 20px;
-background:linear-gradient(to bottom,#800020,#5c0018);
-display:flex;justify-content:center;
-}
-
-.about-container{
+.section-card{
 background:white;
-max-width:900px;
-padding:70px;
-border-radius:25px;
-box-shadow:0 25px 70px rgba(0,0,0,0.3);
-text-align:center;
-}
-
-.about-container h2{
-font-size:36px;
 color:#800020;
-margin-bottom:30px;
+padding:50px;
+border-radius:20px;
+margin-bottom:40px;
+box-shadow:0 20px 60px rgba(0,0,0,0.3);
 }
 
-.about-container p{
-font-size:17px;
-line-height:1.9;
-color:#444;
+.section-card h1,
+.section-card h2{
+text-align:center;
 margin-bottom:25px;
 }
 
-/* VIDEO */
-.video-section{
-background:#800020;padding:100px 20px;text-align:center;
+.section-card p,
+.section-card li{
+font-size:17px;
+line-height:1.9;
 }
 
-.video-section h2{color:white;font-size:32px;margin-bottom:40px;}
-
-.video-container{width:100%;max-width:900px;margin:0 auto;}
-
-.video-container iframe{
-width:100%;height:500px;border-radius:20px;
-box-shadow:0 20px 60px rgba(0,0,0,0.3);
+.section-card ul{
+padding-left:20px;
 }
 
 /* FOOTER */
@@ -198,8 +104,7 @@ padding:60px 20px;
 }
 
 .footer-container{
-max-width:1100px;
-margin:auto;
+max-width:1100px;margin:auto;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:40px;
@@ -214,34 +119,30 @@ padding-bottom:10px;
 
 .footer p{
 font-size:14px;
-line-height:1.8;
 margin-bottom:12px;
 display:flex;
 align-items:center;
 gap:10px;
 }
 
-.footer i{color:#ffccd5;}
-
 .footer-bottom{
-text-align:center;
-margin-top:40px;
-font-size:13px;
-opacity:0.8;
+text-align:center;margin-top:40px;
+font-size:13px;opacity:0.8;
 border-top:1px solid rgba(255,255,255,0.3);
 padding-top:20px;
 }
 
+/* RESPONSIVE */
 @media(max-width:768px){
-.hero-content h1{font-size:40px;}
 .navbar{flex-direction:column;gap:10px;}
-.video-container iframe{height:300px;}
+.section-card{padding:30px;}
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <div class="navbar">
 <div class="logo">
 <img src="logo.png" alt="Logo">
@@ -249,9 +150,9 @@ padding-top:20px;
 </div>
 
 <div class="nav-links">
-<a href="#home">Home</a>
-<a href="#collection">Koleksi</a>
-<a href="#about">About Us</a>
+<a href="index.html">Home</a>
+<a href="index.html#collection">Koleksi</a>
+<a href="about.html">About Us</a>
 <a href="contact.html" target="_blank">Contact Us</a>
 <a href="admin.html" target="_blank">Admin</a>
 
@@ -262,51 +163,61 @@ padding-top:20px;
 <a href="signup.html" target="_blank">Sign Up</a>
 </div>
 </div>
+
 </div>
 </div>
 
-<section class="hero" id="home">
-<div class="hero-content">
-<h1>Welcome to Sa-Na Public Library</h1>
-<div class="search-box">
-<input type="text" id="searchInput" placeholder="Cari koleksi, artikel atau topik...">
-<button onclick="searchBooks()">Cari</button>
-</div>
-</div>
-</section>
+<!-- CONTENT -->
+<div class="main">
 
-<section class="collection-section" id="collection">
-<h2>Koleksi Buku</h2>
-<div class="book-grid">
-<div class="book-card"><h3>Manajemen Perpustakaan Modern</h3><p>Kategori: Manajemen Informasi</p></div>
-<div class="book-card"><h3>Digital Library Transformation</h3><p>Kategori: Teknologi Informasi</p></div>
-<div class="book-card"><h3>Klasifikasi dan Katalogisasi</h3><p>Kategori: Ilmu Perpustakaan</p></div>
-<div class="book-card"><h3>Information Literacy Skills</h3><p>Kategori: Edukasi</p></div>
+<div class="section-card">
+<h1>About Sa-Na Public Library</h1>
+<p>
+Sa-Na Public Library merupakan platform perpustakaan umum digital berbasis web
+yang dikembangkan untuk memudahkan akses informasi dan bahan bacaan secara daring.
+Website ini memungkinkan pengguna mengakses koleksi kapan saja dan di mana saja
+tanpa batasan ruang dan waktu.
+</p>
+<p>
+Platform ini dilengkapi fitur pencarian dan pengelompokan koleksi berdasarkan kategori
+untuk membantu pengguna menemukan informasi secara cepat dan efisien.
+Dengan desain yang responsif dan tampilan yang sederhana,
+website ini diharapkan dapat mendukung literasi digital serta meningkatkan minat baca masyarakat.
+</p>
 </div>
-</section>
 
-<section class="about-section" id="about">
-<div class="about-container">
-<h2>About Us</h2>
-<p>Sa-Na Public Library merupakan platform perpustakaan umum digital berbasis web yang
-  dikembangkan untuk memudahkan akses informasi dan bahan bacaan secara daring. Website
-  ini memungkinkan pengguna mengakses koleksi kapan saja dan di mana saja tanpa batasan
-  ruang dan waktu.</p>
-<p>Platform ini dilengkapi fitur pencarian dan pengelompokan koleksi berdasarkan kategori
-  untuk membantu pengguna menemukan informasi secara cepat dan efisien. Dengan desain
-  yang responsif dan tampilan yang sederhana, website ini diharapkan dapat mendukung 
-  literasi digital serta meningkatkan minat baca masyarakat di era transformasi 
-  digital.</p>
+<div class="section-card">
+<h2>Visi</h2>
+<p>
+Menjadi platform perpustakaan umum digital yang inklusif, inovatif, dan terpercaya
+dalam menyediakan akses informasi berkualitas bagi seluruh masyarakat tanpa batasan ruang dan waktu.
+</p>
 </div>
-</section>
 
-<section class="video-section">
-<h2>Video Inspiratif</h2>
-<div class="video-container">
-<iframe src="https://www.youtube.com/embed/e10yVhdvJak" allowfullscreen></iframe>
+<div class="section-card">
+<h2>Misi</h2>
+<ul>
+<li>Menyediakan koleksi digital yang relevan dan mudah diakses.</li>
+<li>Mengembangkan sistem pencarian informasi yang efektif dan efisien.</li>
+<li>Mendukung peningkatan literasi digital dan budaya membaca.</li>
+<li>Mewujudkan layanan perpustakaan yang fleksibel dan responsif.</li>
+<li>Menciptakan ruang belajar digital yang terbuka bagi semua kalangan.</li>
+</ul>
 </div>
-</section>
 
+<div class="section-card">
+<h2>Tujuan</h2>
+<ul>
+<li>Mempermudah akses informasi dan bahan bacaan secara daring.</li>
+<li>Meningkatkan minat baca dan kemampuan literasi masyarakat.</li>
+<li>Mendukung pembelajaran mandiri berbasis digital.</li>
+<li>Mengoptimalkan pemanfaatan teknologi dalam layanan perpustakaan.</li>
+</ul>
+</div>
+
+</div>
+
+<!-- FOOTER -->
 <footer class="footer">
 <div class="footer-container">
 
@@ -338,15 +249,6 @@ padding-top:20px;
 </footer>
 
 <script>
-function searchBooks(){
-let input=document.getElementById("searchInput").value.toLowerCase();
-let books=document.getElementsByClassName("book-card");
-for(let i=0;i<books.length;i++){
-let text=books[i].innerText.toLowerCase();
-books[i].style.display=text.includes(input)?"block":"none";
-}
-document.getElementById("collection").scrollIntoView({behavior:"smooth"});
-}
 document.getElementById("year").innerHTML=new Date().getFullYear();
 </script>
 
