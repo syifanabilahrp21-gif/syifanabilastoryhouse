@@ -20,10 +20,9 @@ color:white;
 padding:40px;
 text-align:center;
 font-size:32px;
-letter-spacing:1px;
 }
 
-/* SECTION */
+/* EVENT */
 .event-section{
 padding:80px 40px;
 text-align:center;
@@ -35,7 +34,6 @@ margin-bottom:60px;
 color:#800020;
 }
 
-/* GRID */
 .event-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -44,7 +42,6 @@ max-width:1200px;
 margin:auto;
 }
 
-/* CARD */
 .event-card{
 position:relative;
 border-radius:20px;
@@ -58,7 +55,6 @@ background:white;
 transform:translateY(-10px) scale(1.02);
 }
 
-/* IMAGE */
 .event-card img{
 width:100%;
 height:240px;
@@ -70,30 +66,29 @@ transition:0.4s;
 transform:scale(1.1);
 }
 
-/* CONTENT */
 .event-content{
 padding:20px;
-}
-
-.event-date{
-font-size:13px;
-color:#999;
-margin-bottom:10px;
+text-align:left;
 }
 
 .event-content h3{
 color:#800020;
 margin-bottom:10px;
-font-size:20px;
 }
 
 .event-content p{
 font-size:14px;
 color:#555;
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
-/* BUTTON */
+.event-info{
+font-size:13px;
+color:#444;
+margin-bottom:15px;
+line-height:1.6;
+}
+
 .btn{
 display:inline-block;
 padding:10px 20px;
@@ -109,7 +104,6 @@ transition:0.3s;
 background:#5c0018;
 }
 
-/* BADGE */
 .badge{
 position:absolute;
 top:15px;
@@ -121,10 +115,32 @@ border-radius:20px;
 font-size:12px;
 }
 
-/* RESPONSIVE */
+/* VIDEO */
+.video-section{
+padding:80px 20px;
+background:#800020;
+text-align:center;
+}
+
+.video-section h2{
+color:white;
+margin-bottom:30px;
+}
+
+.video-container{
+max-width:900px;
+margin:auto;
+}
+
+.video-container iframe{
+width:100%;
+height:500px;
+border-radius:20px;
+box-shadow:0 20px 60px rgba(0,0,0,0.3);
+}
+
 @media(max-width:768px){
-.header{font-size:24px;padding:25px;}
-.event-section h2{font-size:28px;}
+.video-container iframe{height:300px;}
 }
 </style>
 </head>
@@ -136,44 +152,70 @@ Kegiatan Perpustakaan
 </div>
 
 <section class="event-section">
-
 <h2>Program & Aktivitas Literasi</h2>
 
 <div class="event-grid">
 
-<!-- CARD 1 -->
 <div class="event-card">
-<div class="badge">Literasi</div>
+<div class="badge">Open</div>
 <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da">
 <div class="event-content">
-<div class="event-date">📅 12 Mei 2026</div>
 <h3>Gerakan Literasi Membaca</h3>
-<p>Kegiatan membaca bersama di ruang perpustakaan untuk meningkatkan minat baca masyarakat.</p>
+<p>Kegiatan membaca bersama untuk meningkatkan minat baca masyarakat.</p>
+
+<div class="event-info">
+📅 12 Mei 2026 <br>
+🕒 09.00 - 12.00 WIB <br>
+📍 Kota Medan
+</div>
+
+<a href="#" class="btn">Daftar</a>
 </div>
 </div>
 
-<!-- CARD 2 -->
 <div class="event-card">
-<div class="badge">Workshop</div>
+<div class="badge">Open</div>
 <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba">
 <div class="event-content">
-<div class="event-date">📅 20 Mei 2026</div>
 <h3>Workshop Literasi Digital</h3>
-<p>Pelatihan penggunaan teknologi dan sumber informasi digital untuk mendukung pembelajaran.</p>
+<p>Pelatihan penggunaan teknologi dan informasi digital untuk pembelajaran.</p>
+
+<div class="event-info">
+📅 20 Mei 2026 <br>
+🕒 10.00 - 13.00 WIB <br>
+📍 Kota Medan
+</div>
+
+<a href="#" class="btn">Daftar</a>
 </div>
 </div>
 
-<!-- CARD 3 -->
 <div class="event-card">
-<div class="badge">Diskusi</div>
+<div class="badge">Open</div>
 <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6">
 <div class="event-content">
-<div class="event-date">📅 28 Mei 2026</div>
 <h3>Diskusi & Bedah Buku</h3>
-<p>Kegiatan diskusi buku untuk meningkatkan wawasan dan kemampuan berpikir kritis.</p>>
+<p>Kegiatan diskusi buku untuk memperluas wawasan dan berpikir kritis.</p>
+
+<div class="event-info">
+📅 28 Mei 2026 <br>
+🕒 13.00 - 15.00 WIB <br>
+📍 Kota Medan
+</div>
+
+<a href="#" class="btn">Daftar</a>
 </div>
 </div>
 
+</div>
+</section>
+
+<!-- VIDEO DOCUMENTATION -->
+<section class="video-section">
+<h2>Dokumentasi Kegiatan</h2>
+
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/o5IH0e7Qr3I" allowfullscreen></iframe>
 </div>
 
 </section>
