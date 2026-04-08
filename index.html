@@ -11,13 +11,79 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
 body{font-family:'Playfair Display', serif;}
-  .menu-toggle{
+img{max-width:100%;height:auto;}
+
+/* NAVBAR */
+.navbar{
+position:fixed;top:0;width:100%;
+display:flex;justify-content:space-between;align-items:center;
+padding:20px 60px;background:#800020;z-index:1000;
+}
+
+.logo{
+display:flex;align-items:center;gap:12px;color:white;
+}
+
+.nav-links{
+display:flex;align-items:center;
+}
+
+.nav-links a,.dropbtn{
+color:white;text-decoration:none;padding:0 18px;font-size:15px;
+}
+
+/* HAMBURGER */
+.menu-toggle{
 display:none;
 font-size:22px;
 color:white;
 cursor:pointer;
 }
 
+/* HERO */
+.hero{
+height:100vh;background:url('books.jpg') center/cover;
+display:flex;align-items:center;justify-content:center;
+text-align:center;color:white;
+}
+
+.hero h1{font-size:60px;margin-bottom:20px;}
+
+/* KOLEKSI */
+.book-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.book-card{
+background:white;
+padding:20px;
+border-radius:15px;
+display:flex;
+flex-direction:column;
+}
+
+/* VMT */
+.vmt-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+/* VIDEO */
+.video-container iframe{
+width:100%;
+height:400px;
+}
+
+/* FOOTER */
+.footer-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+}
+
+/* MOBILE */
 @media(max-width:768px){
 
 .menu-toggle{
@@ -27,6 +93,40 @@ right:20px;
 top:20px;
 }
 
+.nav-links{
+display:none;
+flex-direction:column;
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#800020;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.hero{
+height:auto;
+padding:120px 20px;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.book-grid,
+.vmt-container{
+grid-template-columns:1fr;
+}
+
+.video-container iframe{
+height:200px;
+}
+
+}
+</style>
 /* NAVBAR */
 .navbar{
 flex-direction:column;
@@ -630,11 +730,12 @@ books[i].style.display=text.includes(input)?"block":"none";
 }
 document.getElementById("collection").scrollIntoView({behavior:"smooth"});
 }
-document.getElementById("year").innerHTML=new Date().getFullYear();
-</script>
+
 function toggleMenu(){
 document.querySelector(".nav-links").classList.toggle("active");
 }
+
+document.getElementById("year").innerHTML=new Date().getFullYear();
 </script>
 
 </body>
