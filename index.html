@@ -143,15 +143,6 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
 transition:0.3s;
 }
 
-/* TAMBAHAN GAMBAR */
-.book-card img{
-width:100%;
-height:180px;
-object-fit:cover;
-border-radius:10px;
-margin-bottom:15px;
-}
-
 .book-card:hover{transform:translateY(-5px);}
 .book-card h3{color:#800020;margin-bottom:10px;}
 .book-card p{font-size:14px;color:#555;}
@@ -289,35 +280,140 @@ padding-top:20px;
 
 <body>
 
-<!-- NAVBAR tetap sama -->
+<!-- NAVBAR -->
+<div class="navbar">
+<div class="logo">
+<img src="logo.png" alt="Logo">
+<span>Sa-Na Public Library</span>
+</div>
+
+<div class="nav-links">
+<a href="#home">Home</a>
+<a href="#collection">Koleksi</a>
+<a href="#about">About Us</a>
+<a href="contact.html" target="_blank">Contact Us</a>
+<a href="event.html" target="_blank">Event</a>
+<a href="admin.html" target="_blank">Admin</a>
+
+<div class="dropdown">
+<span class="dropbtn">Login</span>
+<div class="dropdown-content">
+<a href="signin.html" target="_blank">Sign In</a>
+<a href="signup.html" target="_blank">Sign Up</a>
+</div>
+</div>
+</div>
+</div>
+
+<section class="hero" id="home">
+<div class="hero-content">
+<h1>Welcome to Sa-Na Public Library</h1>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Cari koleksi, artikel atau topik...">
+<button onclick="searchBooks()">Cari</button>
+</div>
+</div>
+</section>
 
 <section class="collection-section" id="collection">
 <h2>Koleksi Buku</h2>
 <div class="book-grid">
+<div class="book-card"><h3>Manajemen Perpustakaan Modern</h3><p>Kategori: Manajemen Informasi</p></div>
+<div class="book-card"><h3>Digital Library Transformation</h3><p>Kategori: Teknologi Informasi</p></div>
+<div class="book-card"><h3>Klasifikasi dan Katalogisasi</h3><p>Kategori: Ilmu Perpustakaan</p></div>
+<div class="book-card"><h3>Information Literacy Skills</h3><p>Kategori: Edukasi</p></div>
+</div>
+</section>
 
-<div class="book-card">
-<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794">
-<h3>Manajemen Perpustakaan Modern</h3>
-<p>Kategori: Manajemen Informasi</p>
+<section class="about-section" id="about">
+<div class="about-container">
+<h2>About Us</h2>
+<p>Sa-Na Public Library merupakan platform perpustakaan umum digital berbasis web yang dikembangkan untuk memudahkan akses informasi dan bahan bacaan secara daring.</p>
+<p>Platform ini dilengkapi fitur pencarian dan pengelompokan koleksi untuk membantu pengguna menemukan informasi secara cepat dan efisien.</p>
+</div>
+</section>
+
+<!-- VISI MISI TUJUAN -->
+<section class="vmt-section">
+<div class="vmt-container">
+
+<div class="vmt-card">
+<h2>Visi</h2>
+<p>Menjadi platform perpustakaan umum digital yang inklusif, inovatif, dan terpercaya dalam menyediakan akses informasi berkualitas tanpa batasan ruang dan waktu.</p>
 </div>
 
-<div class="book-card">
-<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
-<h3>Digital Library Transformation</h3>
-<p>Kategori: Teknologi Informasi</p>
+<div class="vmt-card">
+<h2>Misi</h2>
+<ul>
+<li>Menyediakan koleksi digital yang relevan dan mudah diakses.</li>
+<li>Mengembangkan sistem pencarian yang efektif dan efisien.</li>
+<li>Mendukung peningkatan literasi digital dan budaya membaca.</li>
+<li>Mewujudkan layanan yang fleksibel dan responsif.</li>
+</ul>
 </div>
 
-<div class="book-card">
-<img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93">
-<h3>Klasifikasi dan Katalogisasi</h3>
-<p>Kategori: Ilmu Perpustakaan</p>
-</div>
-
-<div class="book-card">
-<img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6">
-<h3>Information Literacy Skills</h3>
-<p>Kategori: Edukasi</p>
+<div class="vmt-card">
+<h2>Tujuan</h2>
+<ul>
+<li>Mempermudah akses informasi secara daring.</li>
+<li>Meningkatkan minat baca masyarakat.</li>
+<li>Mendukung pembelajaran mandiri berbasis digital.</li>
+<li>Mengoptimalkan teknologi dalam layanan perpustakaan.</li>
+</ul>
 </div>
 
 </div>
 </section>
+
+<section class="video-section">
+<h2>Video Inspiratif</h2>
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/e10yVhdvJak" allowfullscreen></iframe>
+</div>
+</section>
+
+<footer class="footer">
+<div class="footer-container">
+
+<div>
+<h3>Akses Layanan</h3>
+<p><i class="fa-solid fa-clock"></i> Akses Online 24 Jam</p>
+<p><i class="fa-solid fa-calendar"></i> Tersedia Setiap Hari</p>
+<p><i class="fa-solid fa-globe"></i> Tanpa Batasan Wilayah</p>
+</div>
+
+<div>
+<h3>Layanan Digital</h3>
+<p><i class="fa-solid fa-laptop"></i> Platform Berbasis Website</p>
+<p><i class="fa-solid fa-book"></i> Koleksi Digital Terintegrasi</p>
+<p><i class="fa-solid fa-magnifying-glass"></i> Fitur Pencarian Cepat</p>
+</div>
+
+<div>
+<h3>Kontak</h3>
+<p><i class="fa-solid fa-envelope"></i> syifanabilahrp21@gmail.com</p>
+<p><i class="fa-solid fa-phone"></i> 081269159137</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© <span id="year"></span> Syifa Nabila Harahap. All Rights Reserved.
+</div>
+</footer>
+
+<script>
+function searchBooks(){
+let input=document.getElementById("searchInput").value.toLowerCase();
+let books=document.getElementsByClassName("book-card");
+for(let i=0;i<books.length;i++){
+let text=books[i].innerText.toLowerCase();
+books[i].style.display=text.includes(input)?"block":"none";
+}
+document.getElementById("collection").scrollIntoView({behavior:"smooth"});
+}
+document.getElementById("year").innerHTML=new Date().getFullYear();
+</script>
+
+</body>
+</html>
