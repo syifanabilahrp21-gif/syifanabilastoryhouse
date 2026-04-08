@@ -11,153 +11,6 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
 body{font-family:'Playfair Display', serif;}
-  <style>
-
-/* TAMBAHAN GLOBAL */
-img{
-max-width:100%;
-height:auto;
-}
-
-/* NAVBAR RESPONSIVE */
-@media(max-width:768px){
-
-.navbar{
-flex-direction:column;
-padding:15px 20px;
-gap:10px;
-text-align:center;
-}
-
-.nav-links{
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.nav-links a{
-padding:8px 10px;
-font-size:14px;
-}
-
-.nav-links a::after{
-display:none;
-}
-
-/* HERO */
-.hero{
-height:auto;
-padding:120px 20px 60px;
-}
-
-.hero-content h1{
-font-size:32px;
-}
-
-.search-box{
-display:flex;
-flex-direction:column;
-align-items:center;
-gap:10px;
-}
-
-.search-box input{
-width:100%;
-max-width:300px;
-}
-
-.search-box button{
-margin-left:0;
-width:100%;
-max-width:200px;
-}
-
-/* KOLEKSI */
-.collection-section{
-padding:80px 20px;
-}
-
-.book-grid{
-grid-template-columns:1fr;
-}
-  
-/* ABOUT */
-.about-section{
-padding:80px 20px;
-}
-
-.about-container{
-padding:30px 20px;
-}
-
-.about-container h2{
-font-size:26px;
-}
-
-.about-container p{
-font-size:15px;
-}
-
-/* VMT */
-.vmt-section{
-padding:80px 20px;
-}
-
-.vmt-container{
-grid-template-columns:1fr;
-}
-
-.vmt-card{
-padding:25px;
-}
-
-/* VIDEO */
-.video-section{
-padding:80px 20px;
-}
-
-.video-container iframe{
-height:220px;
-}
-
-/* FOOTER */
-.footer{
-padding:40px 20px;
-}
-
-.footer-container{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.footer p{
-justify-content:center;
-}
-
-}
-
-/* TABLET */
-@media(min-width:769px) and (max-width:1024px){
-
-.navbar{
-padding:20px 30px;
-}
-
-.hero-content h1{
-font-size:45px;
-}
-
-.book-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.vmt-container{
-grid-template-columns:repeat(2,1fr);
-}
-
-.video-container iframe{
-height:350px;
-
-</style>
 
 /* NAVBAR */
 .navbar{
@@ -284,6 +137,15 @@ display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
 }
 
+.book-card{
+background:white;padding:25px;border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.book-card:hover{transform:translateY(-5px);}
+.book-card h3{color:#800020;margin-bottom:10px;}
+.book-card p{font-size:14px;color:#555;}
 
 /* ABOUT */
 .about-section{
@@ -461,7 +323,8 @@ padding-top:20px;
 <div class="book-card"><h3>Klasifikasi dan Katalogisasi</h3><p>Kategori: Ilmu Perpustakaan</p></div>
 <div class="book-card"><h3>Information Literacy Skills</h3><p>Kategori: Edukasi</p></div>
 </div>
-  
+</section>
+
 <section class="about-section" id="about">
 <div class="about-container">
 <h2>About Us</h2>
