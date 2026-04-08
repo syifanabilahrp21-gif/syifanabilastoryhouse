@@ -9,66 +9,122 @@
 <style>
 body{
 font-family:'Playfair Display', serif;
-background:#f8f4f6;
 margin:0;
+background:linear-gradient(to bottom,#f8f4f6,#f1e6ea);
 }
 
 /* HEADER */
 .header{
 background:#800020;
 color:white;
-padding:30px;
+padding:40px;
 text-align:center;
-font-size:30px;
+font-size:32px;
+letter-spacing:1px;
 }
 
-/* EVENT */
+/* SECTION */
 .event-section{
 padding:80px 40px;
 text-align:center;
 }
 
 .event-section h2{
-font-size:35px;
-margin-bottom:40px;
+font-size:36px;
+margin-bottom:60px;
 color:#800020;
 }
 
+/* GRID */
 .event-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-max-width:1100px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:35px;
+max-width:1200px;
 margin:auto;
 }
 
+/* CARD */
 .event-card{
-background:white;
+position:relative;
 border-radius:20px;
 overflow:hidden;
-box-shadow:0 15px 40px rgba(0,0,0,0.2);
-transition:0.3s;
+box-shadow:0 20px 50px rgba(0,0,0,0.25);
+transition:0.4s;
+background:white;
 }
 
 .event-card:hover{
-transform:translateY(-8px);
+transform:translateY(-10px) scale(1.02);
 }
 
+/* IMAGE */
 .event-card img{
 width:100%;
-height:200px;
+height:240px;
 object-fit:cover;
+transition:0.4s;
 }
 
-.event-card h3{
+.event-card:hover img{
+transform:scale(1.1);
+}
+
+/* CONTENT */
+.event-content{
+padding:20px;
+}
+
+.event-date{
+font-size:13px;
+color:#999;
+margin-bottom:10px;
+}
+
+.event-content h3{
 color:#800020;
-margin:15px 0 10px;
+margin-bottom:10px;
+font-size:20px;
 }
 
-.event-card p{
-padding:0 15px 20px;
+.event-content p{
 font-size:14px;
 color:#555;
+margin-bottom:20px;
+}
+
+/* BUTTON */
+.btn{
+display:inline-block;
+padding:10px 20px;
+background:#800020;
+color:white;
+border-radius:25px;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#5c0018;
+}
+
+/* BADGE */
+.badge{
+position:absolute;
+top:15px;
+left:15px;
+background:#800020;
+color:white;
+padding:5px 12px;
+border-radius:20px;
+font-size:12px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.header{font-size:24px;padding:25px;}
+.event-section h2{font-size:28px;}
 }
 </style>
 </head>
@@ -85,22 +141,40 @@ Kegiatan Perpustakaan
 
 <div class="event-grid">
 
+<!-- CARD 1 -->
 <div class="event-card">
-<img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da" alt="Perpustakaan">
+<div class="badge">Literasi</div>
+<img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da">
+<div class="event-content">
+<div class="event-date">📅 12 Mei 2026</div>
 <h3>Gerakan Literasi Membaca</h3>
-<p>Kegiatan membaca bersama di ruang perpustakaan untuk meningkatkan minat baca masyarakat dari berbagai kalangan usia.</p>
+<p>Kegiatan membaca bersama di ruang perpustakaan untuk meningkatkan minat baca masyarakat.</p>
+<a href="#" class="btn">Daftar</a>
+</div>
 </div>
 
+<!-- CARD 2 -->
 <div class="event-card">
-<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Workshop">
+<div class="badge">Workshop</div>
+<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba">
+<div class="event-content">
+<div class="event-date">📅 20 Mei 2026</div>
 <h3>Workshop Literasi Digital</h3>
-<p>Pelatihan penggunaan teknologi dan sumber informasi digital untuk mendukung pembelajaran dan penelitian.</p>
+<p>Pelatihan penggunaan teknologi dan sumber informasi digital untuk mendukung pembelajaran.</p>
+<a href="#" class="btn">Daftar</a>
+</div>
 </div>
 
+<!-- CARD 3 -->
 <div class="event-card">
-<img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6" alt="Diskusi Buku">
+<div class="badge">Diskusi</div>
+<img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6">
+<div class="event-content">
+<div class="event-date">📅 28 Mei 2026</div>
 <h3>Diskusi & Bedah Buku</h3>
-<p>Kegiatan diskusi buku secara terbuka untuk meningkatkan pemahaman, wawasan, dan kemampuan berpikir kritis.</p>
+<p>Kegiatan diskusi buku untuk meningkatkan wawasan dan kemampuan berpikir kritis.</p>
+<a href="#" class="btn">Daftar</a>
+</div>
 </div>
 
 </div>
