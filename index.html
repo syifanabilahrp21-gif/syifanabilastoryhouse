@@ -11,6 +11,70 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
 body{font-family:'Playfair Display', serif;}
+  .menu-toggle{
+display:none;
+font-size:22px;
+color:white;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.menu-toggle{
+display:block;
+position:absolute;
+right:20px;
+top:20px;
+}
+
+/* NAVBAR */
+.navbar{
+flex-direction:column;
+padding:10px 15px;
+}
+
+.nav-links{
+display:none;
+flex-direction:column;
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#800020;
+padding:10px 0;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.nav-links a{
+padding:10px;
+font-size:14px;
+}
+
+/* GRID FIX */
+.book-grid,
+.vmt-container{
+grid-template-columns:1fr;
+}
+
+/* HERO */
+.hero{
+height:auto;
+padding:120px 20px 60px;
+}
+
+.hero-content h1{
+font-size:28px;
+}
+
+/* VIDEO */
+.video-container iframe{
+height:200px;
+}
+
+}
   <style>
 
 /* TAMBAHAN GLOBAL */
@@ -180,7 +244,7 @@ transition:0.3s ease;
 }
 
 .logo img:hover{transform:scale(1.1);}
-
+  
 .nav-links{
 display:flex;
 align-items:center;
@@ -437,6 +501,10 @@ padding-top:20px;
 <span>Sa-Na Public Library</span>
 </div>
 
+  <div class="menu-toggle" onclick="toggleMenu()">
+<i class="fa-solid fa-bars"></i>
+</div>
+  
 <div class="nav-links">
 <a href="#home">Home</a>
 <a href="#collection">Koleksi</a>
@@ -563,6 +631,10 @@ books[i].style.display=text.includes(input)?"block":"none";
 document.getElementById("collection").scrollIntoView({behavior:"smooth"});
 }
 document.getElementById("year").innerHTML=new Date().getFullYear();
+</script>
+function toggleMenu(){
+document.querySelector(".nav-links").classList.toggle("active");
+}
 </script>
 
 </body>
