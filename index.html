@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sa-Na Public Library</title>
-
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    
     <style>
         *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
         body{font-family:'Playfair Display', serif; overflow-x: hidden; width: 100%; background: #fdfdfd;}
@@ -19,15 +19,17 @@
             padding:15px 5%;background:#800020;z-index:1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
-
         .logo{display:flex;align-items:center;gap:12px;color:white;font-size:16px;font-weight:600;}
-        .logo img{height:40px;width:auto;}
+        .logo img{height:40px;width:auto; transition: 0.3s;}
+        .logo img:hover{transform: scale(1.1);}
 
         .nav-links{display:flex;align-items:center;}
         .nav-links a, .dropbtn{
             text-decoration:none;color:white;font-size:14px;
             padding:0 12px;cursor:pointer;transition:0.3s;
+            position: relative;
         }
+        .nav-links a:hover, .dropbtn:hover{opacity:0.7;}
 
         /* DROPDOWN */
         .dropdown{position:relative;display:inline-block;}
@@ -36,91 +38,70 @@
             min-width:160px;border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,0.2);
             opacity:0;visibility:hidden;transform:translateY(10px);transition:0.3s;
         }
-        .dropdown-content a{color:#800020;padding:12px 18px;display:block;text-decoration:none;}
+        .dropdown-content a{color:#800020;padding:12px 18px;display:block;text-decoration:none;border-bottom: 1px solid #eee;}
+        .dropdown-content a:last-child{border:none;}
         .dropdown:hover .dropdown-content{opacity:1;visibility:visible;transform:translateY(0);}
 
         /* HERO */
         .hero{
             height:100vh;background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2000&auto=format&fit=crop');
             background-size:cover;background-position:center;
-            display:flex;align-items:center;justify-content:center;
-            text-align:center;padding:0 20px;
+            display:flex;align-items:center;justify-content:center;text-align:center;padding:0 20px;
         }
         .hero-content{color:white; width: 100%;}
-        .hero-content h1{font-size:clamp(30px, 8vw, 55px);margin-bottom:30px;}
+        .hero-content h1{font-size:clamp(30px, 8vw, 55px);margin-bottom:30px; line-height: 1.2;}
         .search-box{display: flex; flex-direction: column; align-items: center; gap: 10px;}
-        .search-box input{width:100%;max-width:400px;padding:15px 20px;border-radius:30px;border:none;outline:none;}
-        .search-box button{padding:15px 35px;border:none;border-radius:30px;background:#800020;color:white;cursor:pointer;font-weight:bold;}
+        .search-box input{width:100%;max-width:400px;padding:15px 20px;border-radius:30px;border:none;outline:none;font-size: 16px;}
+        .search-box button{padding:15px 35px;border:none;border-radius:30px;background:#800020;color:white;cursor:pointer;font-weight:bold; transition: 0.3s;}
+        .search-box button:hover{background: #a00028;}
 
         /* KOLEKSI */
         .collection-section{padding:80px 5%;background:#800020;color:white;}
         .collection-section h2{text-align:center;font-size:32px;margin-bottom:40px;}
         .book-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;}
-        
-        .book-card{
-            background:white;
-            padding:15px;
-            border-radius:15px;
-            color:#333;
-            text-align:center;
-            transition: transform 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        .book-card:hover { transform: translateY(-8px); }
-
-        .book-cover {
-            width: 100%;
-            height: 280px;
-            margin-bottom: 15px;
-            overflow: hidden;
-            border-radius: 10px;
-        }
-
-        .book-cover img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Biar gambar rapi memenuhi kotak */
-        }
-
-        .book-card h3{color:#800020;margin-bottom:8px;font-size:17px; line-height: 1.3;}
-        .book-card p{font-size: 14px; color: #666; font-style: italic; margin-top: auto;}
+        .book-card{background:white;padding:15px;border-radius:15px;color:#333;text-align:center;transition:0.3s;display:flex;flex-direction:column;height:100%;box-shadow: 0 5px 15px rgba(0,0,0,0.2);}
+        .book-card:hover{transform:translateY(-8px);}
+        .book-cover{width:100%;height:280px;margin-bottom:15px;overflow:hidden;border-radius:10px;background: #eee;}
+        .book-cover img{width:100%;height:100%;object-fit:cover;}
+        .book-card h3{color:#800020;margin-bottom:8px;font-size:17px;}
+        .book-card p{font-size:14px;color:#666;margin-top:auto;}
 
         /* ABOUT */
         .about-section{padding:100px 5%;background:linear-gradient(to bottom,#800020,#5c0018);}
         .about-container{background:white;max-width:900px;padding:50px 30px;border-radius:25px;margin:auto;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,0.3);}
         .about-container h2{color:#800020;margin-bottom:20px;font-size:32px;}
-        .about-container p{line-height:1.8;color:#444;font-size:17px;}
+        .about-container p{line-height:1.9;color:#444;font-size:17px;margin-bottom:15px;}
 
-        /* VISI MISI */
+        /* VISI MISI TUJUAN */
         .vmt-section{padding:80px 5%;background:#800020;}
-        .vmt-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;}
-        .vmt-card{background:white;color:#800020;padding:35px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.2);}
+        .vmt-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;max-width:1100px;margin:auto;}
+        .vmt-card{background:white;color:#800020;padding:35px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.2);transition:0.3s;}
+        .vmt-card:hover{transform: scale(1.02);}
         .vmt-card h2{margin-bottom:20px;text-align:center;border-bottom:2px solid #800020;padding-bottom:10px;}
-        .vmt-card ul{padding-left:20px;line-height:1.8;}
+        .vmt-card p, .vmt-card ul{line-height:1.8;color:#444;}
+        .vmt-card ul{padding-left:20px;}
 
         /* VIDEO */
         .video-section{background:#800020;padding:80px 5%;text-align:center;}
+        .video-section h2{color: white; margin-bottom: 30px;}
         .video-container iframe{width:100%;max-width:850px;aspect-ratio:16/9;border-radius:20px;border:none;box-shadow:0 20px 50px rgba(0,0,0,0.4);}
 
         /* FOOTER */
         .footer{background:#5c0018;color:white;padding:60px 5%;}
-        .footer-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;}
-        .footer h3{margin-bottom:15px;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:10px;}
+        .footer-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;max-width: 1200px; margin: auto;}
+        .footer h3{margin-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:10px; font-size: 18px;}
         .footer p{margin-bottom:12px;display:flex;align-items:center;gap:10px;font-size:14px;}
-        .footer-bottom{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);font-size:13px;}
+        .footer i{color: #ffccd5; width: 20px;}
+        .footer-bottom{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);font-size:13px; opacity: 0.8;}
 
-        /* RESPONSIVE HP */
+        /* RESPONSIVE SETTINGS */
         @media(max-width:768px){
             .navbar{flex-direction: column; gap:10px; padding: 10px;}
             .nav-links{flex-wrap: wrap; justify-content: center;}
             .nav-links a{font-size: 12px; padding: 5px 8px;}
             .hero{height: auto; padding: 150px 20px;}
+            .book-cover{height: 220px;}
         }
-
-        /* RESPONSIVE LAPTOP */
         @media(min-width:769px){
             .nav-links a:not(:last-child)::after{content:"|";position:absolute;right:-4px;color:rgba(255,255,255,0.3);}
             .search-box{flex-direction: row; justify-content: center;}
@@ -128,7 +109,6 @@
         }
     </style>
 </head>
-
 <body>
 
 <nav class="navbar">
@@ -140,13 +120,13 @@
         <a href="#home">Home</a>
         <a href="#collection">Koleksi</a>
         <a href="#about">About Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="event.html">Event</a>
+        <a href="contact.html" target="_blank">Contact Us</a>
+        <a href="event.html" target="_blank">Event</a>
         <div class="dropdown">
             <span class="dropbtn">Login <i class="fa-solid fa-caret-down"></i></span>
             <div class="dropdown-content">
-                <a href="signin.html">Sign In</a>
-                <a href="signup.html">Sign Up</a>
+                <a href="signin.html" target="_blank">Sign In</a>
+                <a href="signup.html" target="_blank">Sign Up</a>
             </div>
         </div>
     </div>
@@ -156,7 +136,7 @@
     <div class="hero-content">
         <h1>Welcome to Sa-Na Public Library</h1>
         <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Cari koleksi buku...">
+            <input type="text" id="searchInput" placeholder="Cari koleksi, artikel atau topik...">
             <button onclick="searchBooks()">Cari</button>
         </div>
     </div>
@@ -166,35 +146,20 @@
     <h2>Koleksi Buku Terpopuler</h2>
     <div class="book-grid">
         <div class="book-card">
-            <div class="book-cover">
-                <img src="https://images.unsplash.com/photo-1454165833267-028cc2402f9a?q=80&w=500&auto=format&fit=crop" alt="Manajemen">
-            </div>
-            <h3>Manajemen Perpustakaan Modern</h3>
-            <p>Kategori: Manajemen</p>
+            <div class="book-cover"><img src="https://images.unsplash.com/photo-1454165833267-028cc2402f9a?q=80&w=500&auto=format&fit=crop" alt="Manajemen"></div>
+            <h3>Manajemen Perpustakaan Modern</h3><p>Kategori: Manajemen Informasi</p>
         </div>
-        
         <div class="book-card">
-            <div class="book-cover">
-                <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=500&auto=format&fit=crop" alt="Teknologi">
-            </div>
-            <h3>Digital Transformation Strategy</h3>
-            <p>Kategori: Teknologi Informasi</p>
+            <div class="book-cover"><img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=500&auto=format&fit=crop" alt="Teknologi"></div>
+            <h3>Digital Library Transformation</h3><p>Kategori: Teknologi Informasi</p>
         </div>
-        
         <div class="book-card">
-            <div class="book-cover">
-                <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=500&auto=format&fit=crop" alt="Katalogisasi">
-            </div>
-            <h3>Klasifikasi & Katalogisasi</h3>
-            <p>Kategori: Ilmu Perpustakaan</p>
+            <div class="book-cover"><img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=500&auto=format&fit=crop" alt="Klasifikasi"></div>
+            <h3>Klasifikasi dan Katalogisasi</h3><p>Kategori: Ilmu Perpustakaan</p>
         </div>
-        
         <div class="book-card">
-            <div class="book-cover">
-                <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=500&auto=format&fit=crop" alt="Literasi">
-            </div>
-            <h3>Information Literacy Skills</h3>
-            <p>Kategori: Edukasi</p>
+            <div class="book-cover"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=500&auto=format&fit=crop" alt="Literasi"></div>
+            <h3>Information Literacy Skills</h3><p>Kategori: Edukasi</p>
         </div>
     </div>
 </section>
@@ -202,7 +167,8 @@
 <section class="about-section" id="about">
     <div class="about-container">
         <h2>About Us</h2>
-        <p>Sa-Na Public Library adalah platform perpustakaan digital inovatif yang dikembangkan oleh Syifa Nabila Harahap. Kami berkomitmen menyediakan akses bacaan berkualitas tanpa batasan ruang dan waktu.</p>
+        <p>Sa-Na Public Library merupakan platform perpustakaan umum digital berbasis web yang dikembangkan untuk memudahkan akses informasi dan bahan bacaan secara daring.</p>
+        <p>Platform ini dilengkapi fitur pencarian dan pengelompokan koleksi untuk membantu pengguna menemukan informasi secara cepat dan efisien.</p>
     </div>
 </section>
 
@@ -210,27 +176,31 @@
     <div class="vmt-container">
         <div class="vmt-card">
             <h2>Visi</h2>
-            <p>Menjadi platform literasi digital paling terpercaya dan inklusif di masa depan.</p>
+            <p>Menjadi platform perpustakaan umum digital yang inklusif, inovatif, dan terpercaya dalam menyediakan akses informasi berkualitas tanpa batasan ruang dan waktu.</p>
         </div>
         <div class="vmt-card">
             <h2>Misi</h2>
             <ul>
-                <li>Akses koleksi 24/7 daring.</li>
-                <li>Pencarian buku yang cerdas.</li>
-                <li>Meningkatkan budaya baca.</li>
+                <li>Menyediakan koleksi digital yang relevan dan mudah diakses.</li>
+                <li>Mengembangkan sistem pencarian yang efektif dan efisien.</li>
+                <li>Mendukung peningkatan literasi digital dan budaya membaca.</li>
+                <li>Mewujudkan layanan yang fleksibel dan responsif.</li>
             </ul>
         </div>
         <div class="vmt-card">
             <h2>Tujuan</h2>
             <ul>
-                <li>Memudahkan belajar mandiri.</li>
-                <li>Mendukung literasi bangsa.</li>
+                <li>Mempermudah akses informasi secara daring.</li>
+                <li>Meningkatkan minat baca masyarakat.</li>
+                <li>Mendukung pembelajaran mandiri berbasis digital.</li>
+                <li>Mengoptimalkan teknologi dalam layanan perpustakaan.</li>
             </ul>
         </div>
     </div>
 </section>
 
 <section class="video-section">
+    <h2>Video Inspiratif</h2>
     <div class="video-container">
         <iframe src="https://www.youtube.com/embed/e10yVhdvJak" allowfullscreen></iframe>
     </div>
@@ -239,12 +209,19 @@
 <footer class="footer">
     <div class="footer-container">
         <div>
-            <h3>Layanan Digital</h3>
-            <p><i class="fa-solid fa-clock"></i> Tersedia 24 Jam</p>
-            <p><i class="fa-solid fa-globe"></i> Jangkauan Global</p>
+            <h3>Akses Layanan</h3>
+            <p><i class="fa-solid fa-clock"></i> Akses Online 24 Jam</p>
+            <p><i class="fa-solid fa-calendar"></i> Tersedia Setiap Hari</p>
+            <p><i class="fa-solid fa-globe"></i> Tanpa Batasan Wilayah</p>
         </div>
         <div>
-            <h3>Kontak Perpustakaan</h3>
+            <h3>Layanan Digital</h3>
+            <p><i class="fa-solid fa-laptop"></i> Platform Berbasis Website</p>
+            <p><i class="fa-solid fa-book"></i> Koleksi Digital Terintegrasi</p>
+            <p><i class="fa-solid fa-magnifying-glass"></i> Fitur Pencarian Cepat</p>
+        </div>
+        <div>
+            <h3>Kontak</h3>
             <p><i class="fa-solid fa-envelope"></i> syifanabilahrp21@gmail.com</p>
             <p><i class="fa-solid fa-phone"></i> 081269159137</p>
         </div>
@@ -255,16 +232,19 @@
 </footer>
 
 <script>
+    // Fungsi Pencarian
     function searchBooks(){
-        let input=document.getElementById("searchInput").value.toLowerCase();
-        let books=document.getElementsByClassName("book-card");
-        for(let i=0;i<books.length;i++){
-            let text=books[i].innerText.toLowerCase();
-            books[i].style.display=text.includes(input)?"flex":"none";
+        let input = document.getElementById("searchInput").value.toLowerCase();
+        let books = document.getElementsByClassName("book-card");
+        for(let i=0; i<books.length; i++){
+            let text = books[i].innerText.toLowerCase();
+            books[i].style.display = text.includes(input) ? "flex" : "none";
         }
         document.getElementById("collection").scrollIntoView({behavior:"smooth"});
     }
-    document.getElementById("year").innerHTML=new Date().getFullYear();
+
+    // Mengatur tahun otomatis
+    document.getElementById("year").innerHTML = new Date().getFullYear();
 </script>
 
 </body>
