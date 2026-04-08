@@ -20,14 +20,12 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         .logo{display:flex;align-items:center;gap:12px;color:white;font-size:16px;font-weight:600;}
-        .logo img{height:40px;width:auto; transition: 0.3s;}
-        .logo img:hover{transform: scale(1.1);}
+        .logo img{height:40px;width:auto;}
 
         .nav-links{display:flex;align-items:center;}
         .nav-links a, .dropbtn{
             text-decoration:none;color:white;font-size:14px;
             padding:0 12px;cursor:pointer;transition:0.3s;
-            position: relative;
         }
         .nav-links a:hover, .dropbtn:hover{opacity:0.7;}
 
@@ -49,19 +47,18 @@
             display:flex;align-items:center;justify-content:center;text-align:center;padding:0 20px;
         }
         .hero-content{color:white; width: 100%;}
-        .hero-content h1{font-size:clamp(30px, 8vw, 55px);margin-bottom:30px; line-height: 1.2;}
+        .hero-content h1{font-size:clamp(30px, 8vw, 55px);margin-bottom:30px;}
         .search-box{display: flex; flex-direction: column; align-items: center; gap: 10px;}
-        .search-box input{width:100%;max-width:400px;padding:15px 20px;border-radius:30px;border:none;outline:none;font-size: 16px;}
-        .search-box button{padding:15px 35px;border:none;border-radius:30px;background:#800020;color:white;cursor:pointer;font-weight:bold; transition: 0.3s;}
-        .search-box button:hover{background: #a00028;}
+        .search-box input{width:100%;max-width:400px;padding:15px 20px;border-radius:30px;border:none;outline:none;}
+        .search-box button{padding:15px 35px;border:none;border-radius:30px;background:#800020;color:white;cursor:pointer;font-weight:bold;}
 
         /* KOLEKSI */
         .collection-section{padding:80px 5%;background:#800020;color:white;}
         .collection-section h2{text-align:center;font-size:32px;margin-bottom:40px;}
         .book-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;}
-        .book-card{background:white;padding:15px;border-radius:15px;color:#333;text-align:center;transition:0.3s;display:flex;flex-direction:column;height:100%;box-shadow: 0 5px 15px rgba(0,0,0,0.2);}
+        .book-card{background:white;padding:15px;border-radius:15px;color:#333;text-align:center;transition:0.3s;display:flex;flex-direction:column;height:100%;}
         .book-card:hover{transform:translateY(-8px);}
-        .book-cover{width:100%;height:280px;margin-bottom:15px;overflow:hidden;border-radius:10px;background: #eee;}
+        .book-cover{width:100%;height:280px;margin-bottom:15px;overflow:hidden;border-radius:10px;}
         .book-cover img{width:100%;height:100%;object-fit:cover;}
         .book-card h3{color:#800020;margin-bottom:8px;font-size:17px;}
         .book-card p{font-size:14px;color:#666;margin-top:auto;}
@@ -75,32 +72,28 @@
         /* VISI MISI TUJUAN */
         .vmt-section{padding:80px 5%;background:#800020;}
         .vmt-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;max-width:1100px;margin:auto;}
-        .vmt-card{background:white;color:#800020;padding:35px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.2);transition:0.3s;}
-        .vmt-card:hover{transform: scale(1.02);}
+        .vmt-card{background:white;color:#800020;padding:35px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,0.2);}
         .vmt-card h2{margin-bottom:20px;text-align:center;border-bottom:2px solid #800020;padding-bottom:10px;}
         .vmt-card p, .vmt-card ul{line-height:1.8;color:#444;}
         .vmt-card ul{padding-left:20px;}
 
         /* VIDEO */
         .video-section{background:#800020;padding:80px 5%;text-align:center;}
-        .video-section h2{color: white; margin-bottom: 30px;}
+        .video-section h2{color: white; margin-bottom: 20px;}
         .video-container iframe{width:100%;max-width:850px;aspect-ratio:16/9;border-radius:20px;border:none;box-shadow:0 20px 50px rgba(0,0,0,0.4);}
 
         /* FOOTER */
         .footer{background:#5c0018;color:white;padding:60px 5%;}
         .footer-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;max-width: 1200px; margin: auto;}
-        .footer h3{margin-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:10px; font-size: 18px;}
+        .footer h3{margin-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:10px;}
         .footer p{margin-bottom:12px;display:flex;align-items:center;gap:10px;font-size:14px;}
-        .footer i{color: #ffccd5; width: 20px;}
-        .footer-bottom{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);font-size:13px; opacity: 0.8;}
+        .footer-bottom{text-align:center;margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);font-size:13px;}
 
-        /* RESPONSIVE SETTINGS */
         @media(max-width:768px){
             .navbar{flex-direction: column; gap:10px; padding: 10px;}
             .nav-links{flex-wrap: wrap; justify-content: center;}
-            .nav-links a{font-size: 12px; padding: 5px 8px;}
+            .nav-links a{font-size: 11px; padding: 5px 6px;}
             .hero{height: auto; padding: 150px 20px;}
-            .book-cover{height: 220px;}
         }
         @media(min-width:769px){
             .nav-links a:not(:last-child)::after{content:"|";position:absolute;right:-4px;color:rgba(255,255,255,0.3);}
@@ -112,16 +105,14 @@
 <body>
 
 <nav class="navbar">
-    <div class="logo">
-        <img src="logo.png" alt="Logo">
-        <span>Sa-Na Public Library</span>
-    </div>
+    <div class="logo"><img src="logo.png" alt="Logo"><span>Sa-Na Public Library</span></div>
     <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#collection">Koleksi</a>
         <a href="#about">About Us</a>
-        <a href="contact.html" target="_blank">Contact Us</a>
+        <a href="contact.html" target="_blank">Contact</a>
         <a href="event.html" target="_blank">Event</a>
+        <a href="admin.html" target="_blank">Admin</a>
         <div class="dropdown">
             <span class="dropbtn">Login <i class="fa-solid fa-caret-down"></i></span>
             <div class="dropdown-content">
@@ -136,7 +127,7 @@
     <div class="hero-content">
         <h1>Welcome to Sa-Na Public Library</h1>
         <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Cari koleksi, artikel atau topik...">
+            <input type="text" id="searchInput" placeholder="Cari koleksi buku...">
             <button onclick="searchBooks()">Cari</button>
         </div>
     </div>
@@ -146,19 +137,19 @@
     <h2>Koleksi Buku Terpopuler</h2>
     <div class="book-grid">
         <div class="book-card">
-            <div class="book-cover"><img src="https://images.unsplash.com/photo-1454165833267-028cc2402f9a?q=80&w=500&auto=format&fit=crop" alt="Manajemen"></div>
-            <h3>Manajemen Perpustakaan Modern</h3><p>Kategori: Manajemen Informasi</p>
+            <div class="book-cover"><img src="https://images.unsplash.com/photo-1454165833267-028cc2402f9a?q=80&w=500&auto=format&fit=crop"></div>
+            <h3>Manajemen Perpustakaan Modern</h3><p>Kategori: Manajemen</p>
         </div>
         <div class="book-card">
-            <div class="book-cover"><img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=500&auto=format&fit=crop" alt="Teknologi"></div>
-            <h3>Digital Library Transformation</h3><p>Kategori: Teknologi Informasi</p>
+            <div class="book-cover"><img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=500&auto=format&fit=crop"></div>
+            <h3>Digital Transformation Strategy</h3><p>Kategori: Teknologi</p>
         </div>
         <div class="book-card">
-            <div class="book-cover"><img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=500&auto=format&fit=crop" alt="Klasifikasi"></div>
-            <h3>Klasifikasi dan Katalogisasi</h3><p>Kategori: Ilmu Perpustakaan</p>
+            <div class="book-cover"><img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=500&auto=format&fit=crop"></div>
+            <h3>Klasifikasi & Katalogisasi</h3><p>Kategori: Ilmu Perpustakaan</p>
         </div>
         <div class="book-card">
-            <div class="book-cover"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=500&auto=format&fit=crop" alt="Literasi"></div>
+            <div class="book-cover"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=500&auto=format&fit=crop"></div>
             <h3>Information Literacy Skills</h3><p>Kategori: Edukasi</p>
         </div>
     </div>
@@ -226,13 +217,10 @@
             <p><i class="fa-solid fa-phone"></i> 081269159137</p>
         </div>
     </div>
-    <div class="footer-bottom">
-        © <span id="year"></span> Syifa Nabila Harahap. All Rights Reserved.
-    </div>
+    <div class="footer-bottom">© <span id="year"></span> Syifa Nabila Harahap. All Rights Reserved.</div>
 </footer>
 
 <script>
-    // Fungsi Pencarian
     function searchBooks(){
         let input = document.getElementById("searchInput").value.toLowerCase();
         let books = document.getElementsByClassName("book-card");
@@ -242,8 +230,6 @@
         }
         document.getElementById("collection").scrollIntoView({behavior:"smooth"});
     }
-
-    // Mengatur tahun otomatis
     document.getElementById("year").innerHTML = new Date().getFullYear();
 </script>
 
