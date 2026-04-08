@@ -9,9 +9,162 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
-body{font-family:'Playfair Display', serif;}
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+    body{font-family:'Playfair Display', serif; overflow-x: hidden;}
 
+    /* NAVBAR - Dibuat lebih fleksibel */
+    .navbar{
+        position:fixed;top:0;width:100%;
+        display:flex;justify-content:space-between;align-items:center;
+        padding:15px 5%;background:#800020;z-index:1000;
+        flex-wrap: wrap; /* Biar menu turun kalau gak muat */
+    }
+
+    .logo{
+        display:flex;align-items:center;gap:10px;
+        color:white;font-size:14px;font-weight:600;
+    }
+
+    .logo img{
+        height:35px;width:auto;object-fit:contain;
+        transition:0.3s ease;
+    }
+
+    .nav-links{
+        display:flex;
+        align-items:center;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .nav-links a, .dropbtn{
+        text-decoration:none;
+        color:white;
+        font-size:13px;
+        padding:5px 10px;
+        cursor:pointer;
+    }
+
+    /* Hilangkan garis pemisah di HP agar tidak berantakan */
+    .nav-links a:not(:last-child)::after{
+        content: "";
+    }
+
+    /* HERO - Font disesuaikan */
+    .hero{
+        height:100vh;background-image:url('books.jpg');
+        background-size:cover;background-position:center;
+        display:flex;align-items:center;justify-content:center;
+        text-align:center;position:relative;padding: 0 20px;
+    }
+
+    .hero::after{
+        content:"";position:absolute;width:100%;height:100%;
+        background:rgba(0,0,0,0.45);top:0;left:0;
+    }
+
+    .hero-content{position:relative;z-index:2;color:white; width: 100%;}
+    
+    .hero-content h1{
+        font-size:clamp(28px, 8vw, 60px); /* Ukuran font dinamis */
+        margin-bottom:20px;
+        line-height: 1.2;
+    }
+
+    .search-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .search-box input{
+        width:100%;max-width:400px;padding:12px 20px;
+        border-radius:30px;border:none;font-size:15px;outline:none;
+    }
+
+    .search-box button{
+        width: fit-content;
+        padding:12px 30px;border:none;border-radius:30px;
+        background:#800020;color:white;cursor:pointer;
+    }
+
+    /* KOLEKSI */
+    .collection-section{
+        padding:80px 20px;background:#800020;color:white;
+    }
+
+    .collection-section h2{
+        text-align:center;font-size:28px;margin-bottom:40px;
+    }
+
+    .book-grid{
+        display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+        gap:20px;
+    }
+
+    /* ABOUT */
+    .about-section{
+        padding:80px 20px;
+        background:linear-gradient(to bottom,#800020,#5c0018);
+    }
+
+    .about-container{
+        background:white;
+        max-width:900px;
+        padding:40px 25px;
+        border-radius:20px;
+        margin: auto;
+    }
+
+    /* VISI MISI TUJUAN */
+    .vmt-section{
+        padding:80px 20px;
+        background:#800020;
+    }
+
+    .vmt-container{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(100%,1fr));
+        gap:20px;
+    }
+
+    .vmt-card{
+        background:white; color:#800020;
+        padding:30px 20px; border-radius:15px;
+    }
+
+    /* VIDEO */
+    .video-section{
+        background:#800020;padding:60px 20px;
+    }
+
+    .video-container iframe{
+        width:100%; height:auto; aspect-ratio: 16/9; /* Menjaga rasio video */
+        border-radius:15px;
+    }
+
+    /* FOOTER */
+    .footer-container{
+        grid-template-columns: 1fr; /* Stack satu kolom di HP */
+        text-align: center;
+    }
+    
+    .footer p { justify-content: center; }
+
+    /* MEDIA QUERIES UNTUK LAYAR BESAR (TABLET/PC) */
+    @media(min-width:769px){
+        .navbar{ padding: 20px 60px; flex-wrap: nowrap; }
+        .nav-links{ margin-top: 0; }
+        .nav-links a:not(:last-child)::after{ content:"|"; position:absolute; right:-4px; color:rgba(255,255,255,0.4); }
+        .search-box{ flex-direction: row; justify-content: center; }
+        .vmt-container{ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .footer-container{ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); text-align: left; }
+        .footer p { justify-content: flex-start; }
+    }
+</style>
+  
 /* NAVBAR */
 .navbar{
 position:fixed;top:0;width:100%;
