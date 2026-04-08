@@ -15,7 +15,33 @@ justify-content:center;
 align-items:center;
 height:100vh;
 margin:0;
+position:relative;
 }
+
+/* CLOSE BUTTON */
+.close-btn{
+position:absolute;
+top:20px;
+right:25px;
+width:40px;
+height:40px;
+background:white;
+color:#800020;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.close-btn:hover{
+background:#800020;
+color:white;
+}
+
 .contact-box{
 background:white;
 padding:40px;
@@ -23,6 +49,7 @@ border-radius:15px;
 width:350px;
 text-align:center;
 }
+
 textarea{
 width:100%;
 padding:12px;
@@ -31,6 +58,7 @@ border-radius:8px;
 border:1px solid #ccc;
 resize:none;
 }
+
 button{
 width:100%;
 padding:12px;
@@ -41,11 +69,15 @@ color:white;
 border-radius:25px;
 cursor:pointer;
 }
+
 button:hover{opacity:0.9;}
 </style>
 </head>
 
 <body>
+
+<!-- TOMBOL X -->
+<a href="index.html" class="close-btn">×</a>
 
 <div class="contact-box">
 <h2>Contact Us</h2>
