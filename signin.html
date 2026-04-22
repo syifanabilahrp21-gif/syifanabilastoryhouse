@@ -2,131 +2,88 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Sign In - Syifa Nabila</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<title>Login</title>
 
 <style>
 body{
-font-family:'Playfair Display', serif;
+font-family:Arial, sans-serif;
 background:#800020;
 display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
 margin:0;
-position:relative;
 }
 
-/* TOMBOL X */
-.close-btn{
-position:absolute;
-top:20px;
-right:25px;
-width:40px;
-height:40px;
-background:white;
-color:#800020;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-font-size:22px;
-text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
-transition:0.3s;
-}
-
-.close-btn:hover{
-background:#800020;
-color:white;
-}
-
-/* BOX */
 .container{
 background:white;
-padding:50px;
-border-radius:20px;
-width:380px;
-box-shadow:0 20px 60px rgba(0,0,0,0.3);
+padding:40px;
+border-radius:15px;
+width:300px;
 text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
 h2{
 color:#800020;
-margin-bottom:25px;
 }
 
 input{
 width:100%;
-padding:12px;
-margin:12px 0;
-border-radius:8px;
+padding:10px;
+margin:10px 0;
+border-radius:5px;
 border:1px solid #ccc;
-font-size:14px;
 }
 
 button{
 width:100%;
-padding:12px;
-margin-top:20px;
-border:none;
+padding:10px;
 background:#800020;
 color:white;
-border-radius:25px;
+border:none;
+border-radius:20px;
 cursor:pointer;
-font-size:15px;
-transition:0.3s;
 }
 
 button:hover{
 opacity:0.9;
-}
-
-.back{
-margin-top:20px;
-display:block;
-color:#800020;
-text-decoration:none;
-font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- TOMBOL X -->
-<a href="index.html" class="close-btn">×</a>
-
 <div class="container">
-<h2>Sign In</h2>
+<h2>Login</h2>
 
-<input type="email" id="email" placeholder="Email">
+<input type="text" id="username" placeholder="Username">
 <input type="password" id="password" placeholder="Password">
 
-<button onclick="login()">Sign In</button>
-
-<a href="signup.html" class="back">Belum punya akun? Sign Up</a>
+<button onclick="login()">Login</button>
 </div>
 
 <script>
 function login(){
-let email=document.getElementById("email").value.trim();
-let password=document.getElementById("password").value.trim();
+let username = document.getElementById("username").value.trim();
+let password = document.getElementById("password").value.trim();
 
-let emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+// DATA LOGIN (contoh statis)
+let validUsername = "admin";
+let validPassword = "12345";
 
-if(!email || !password){
-alert("Semua field wajib diisi!");
+// 1. CEK INPUT KOSONG
+if(username === "" || password === ""){
+alert("Input tidak lengkap!");
 return;
 }
 
-if(!emailRegex.test(email)){
-alert("Format email tidak valid!");
-return;
+// 2. CEK BENAR / SALAH
+if(username === validUsername && password === validPassword){
+alert("Login sukses!");
+} else {
+alert("Login gagal!");
 }
-
-alert("Login berhasil!");
 }
 </script>
 
