@@ -99,7 +99,6 @@ font-size:14px;
 <div class="container">
 <h2>Sign Up</h2>
 
-<!-- FORM -->
 <form method="post">
 <input type="text" name="firstName" placeholder="First Name">
 <input type="text" name="lastName" placeholder="Last Name">
@@ -125,7 +124,7 @@ $phone = $_POST['phone'];
 $nama = $firstName." ".$lastName;
 $tanggal = date("Y-m-d");
 
-// VALIDASI (SAMA SEPERTI JS KAMU)
+// VALIDASI
 if(empty($firstName) || empty($lastName) || empty($email) || empty($password) || empty($phone)){
     echo "<script>alert('Semua field wajib diisi!')</script>";
 }
@@ -140,9 +139,10 @@ elseif(!preg_match('/^[0-9]+$/', $phone)){
 }
 else{
 
-    // MASUKKAN KE DATABASE
-    mysqli_query($conn,"INSERT INTO anggota VALUES(
-        '',
+    // QUERY FIX (AMAN)
+    $result = mysqli_query($conn,"INSERT INTO anggota 
+    (nama,email,no_telp,alamat,tanggal_daftar)
+    VALUES(
         '$nama',
         '$email',
         '$phone',
@@ -150,7 +150,11 @@ else{
         '$tanggal'
     )");
 
-    echo "<script>alert('Registrasi berhasil!'); window.location='anggota.php';</script>";
+    if(!$result){
+        echo mysqli_error($conn);
+    } else {
+        echo "<script>alert('Registrasi berhasil!'); window.location='anggota.php';</script>";
+    }
 }
 }
 ?>
