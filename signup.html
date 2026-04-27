@@ -1,3 +1,4 @@
+<?php include 'koneksi.php'; ?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -18,7 +19,6 @@ margin:0;
 position:relative;
 }
 
-/* TOMBOL X */
 .close-btn{
 position:absolute;
 top:20px;
@@ -42,7 +42,6 @@ background:#800020;
 color:white;
 }
 
-/* BOX */
 .container{
 background:white;
 padding:50px;
@@ -95,57 +94,66 @@ font-size:14px;
 
 <body>
 
-<!-- TOMBOL X -->
-<a href="index.html" class="close-btn">×</a>
+<a href="index.php" class="close-btn">×</a>
 
 <div class="container">
 <h2>Sign Up</h2>
 
-<input type="text" id="firstName" placeholder="First Name">
-<input type="text" id="lastName" placeholder="Last Name">
-<input type="email" id="email" placeholder="Email">
-<input type="password" id="password" placeholder="Password">
-<input type="text" id="phone" placeholder="No. Telephone">
+<!-- FORM -->
+<form method="post">
+<input type="text" name="firstName" placeholder="First Name">
+<input type="text" name="lastName" placeholder="Last Name">
+<input type="email" name="email" placeholder="Email">
+<input type="password" name="password" placeholder="Password">
+<input type="text" name="phone" placeholder="No. Telephone">
 
-<button onclick="register()">Sign Up</button>
+<button type="submit">Sign Up</button>
+</form>
 
-<a href="signin.html" class="back">Sudah punya akun? Sign In</a>
+<a href="signin.php" class="back">Sudah punya akun? Sign In</a>
 </div>
 
-<script>
-function register(){
-let firstName=document.getElementById("firstName").value.trim();
-let lastName=document.getElementById("lastName").value.trim();
-let email=document.getElementById("email").value.trim();
-let password=document.getElementById("password").value.trim();
-let phone=document.getElementById("phone").value.trim();
+<?php
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-let emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-let phoneRegex=/^[0-9]+$/;
+$firstName = $_POST['firstName'];
+$lastName = $_POST['lastName'];
+$email = $_POST['email'];
+$password = $_POST['password'];
+$phone = $_POST['phone'];
 
-if(!firstName || !lastName || !email || !password || !phone){
-alert("Semua field wajib diisi!");
-return;
+$nama = $firstName." ".$lastName;
+$tanggal = date("Y-m-d");
+
+// VALIDASI (SAMA SEPERTI JS KAMU)
+if(empty($firstName) || empty($lastName) || empty($email) || empty($password) || empty($phone)){
+    echo "<script>alert('Semua field wajib diisi!')</script>";
 }
-
-if(!emailRegex.test(email)){
-alert("Format email tidak valid!");
-return;
+elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    echo "<script>alert('Format email tidak valid!')</script>";
 }
-
-if(password.length < 6){
-alert("Password minimal 6 karakter!");
-return;
+elseif(strlen($password) < 6){
+    echo "<script>alert('Password minimal 6 karakter!')</script>";
 }
-
-if(!phoneRegex.test(phone)){
-alert("No. Telephone hanya boleh angka!");
-return;
+elseif(!preg_match('/^[0-9]+$/', $phone)){
+    echo "<script>alert('No. Telephone hanya boleh angka!')</script>";
 }
+else{
 
-alert("Registrasi berhasil!");
+    // MASUKKAN KE DATABASE
+    mysqli_query($conn,"INSERT INTO anggota VALUES(
+        '',
+        '$nama',
+        '$email',
+        '$phone',
+        '-',
+        '$tanggal'
+    )");
+
+    echo "<script>alert('Registrasi berhasil!'); window.location='anggota.php';</script>";
 }
-</script>
+}
+?>
 
 </body>
 </html>
